@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
 		E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292125FA6BE300363F6B /* AppDelegate.swift */; };
 		E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292325FA6BE300363F6B /* SceneDelegate.swift */; };
 		E759292625FA6BE300363F6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292525FA6BE300363F6B /* ViewController.swift */; };
 		E759292925FA6BE300363F6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E759292725FA6BE300363F6B /* Main.storyboard */; };
 		E759292B25FA6BE500363F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E759292A25FA6BE500363F6B /* Assets.xcassets */; };
 		E759292E25FA6BE500363F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */; };
+		E759293725FA6BFF00363F6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759293625FA6BFF00363F6B /* Extensions.swift */; };
+		E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766A3652601A77200FD0961 /* Extension_Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E759291E25FA6BE300363F6B /* Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E759292125FA6BE300363F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E759292325FA6BE300363F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		E759292A25FA6BE500363F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E759292D25FA6BE500363F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E759292F25FA6BE500363F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E759293625FA6BFF00363F6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E766A3652601A77200FD0961 /* Extension_Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Enum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				E759292A25FA6BE500363F6B /* Assets.xcassets */,
 				E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */,
 				E759292F25FA6BE500363F6B /* Info.plist */,
+				E759293625FA6BFF00363F6B /* Extensions.swift */,
+				E766A3652601A77200FD0961 /* Extension_Enum.swift */,
+				E71B26C125FE9D23001AA5BB /* GradientView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -139,7 +148,10 @@
 			files = (
 				E759292625FA6BE300363F6B /* ViewController.swift in Sources */,
 				E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */,
+				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
+				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
+				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
