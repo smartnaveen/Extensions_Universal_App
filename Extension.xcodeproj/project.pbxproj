@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
+		E74B9BA22605018F00D68644 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B9BA12605018F00D68644 /* Global.swift */; };
 		E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292125FA6BE300363F6B /* AppDelegate.swift */; };
 		E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292325FA6BE300363F6B /* SceneDelegate.swift */; };
 		E759292625FA6BE300363F6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292525FA6BE300363F6B /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E74B9BA12605018F00D68644 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E759291E25FA6BE300363F6B /* Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E759292125FA6BE300363F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E759292325FA6BE300363F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				E759292A25FA6BE500363F6B /* Assets.xcassets */,
 				E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */,
 				E759292F25FA6BE500363F6B /* Info.plist */,
+				E74B9BA12605018F00D68644 /* Global.swift */,
 				E759293625FA6BFF00363F6B /* Extensions.swift */,
 				E766A3652601A77200FD0961 /* Extension_Enum.swift */,
 				E71B26C125FE9D23001AA5BB /* GradientView.swift */,
@@ -152,6 +155,7 @@
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
 				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,
+				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

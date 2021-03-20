@@ -69,6 +69,14 @@ extension UIView {
         }
     }
     
+    /// appleLogoImageView.rounded(with: 30, at: [.allTop, .allBottom])
+    func rounded(with radius: CGFloat,at corners: [ViewCornerType]) {
+        roundedCorner(with: radius, topLeft: corners.contains(.allTop) || corners.contains(.allLeft),
+                      topRight: corners.contains(.allTop) || corners.contains(.allRight),
+                      bottomLeft: corners.contains(.allBottom) || corners.contains(.allLeft),
+                      bottomRight: corners.contains(.allBottom) || corners.contains(.allRight))
+    }
+    
     /// appleLogoImageView.rounded(with: 20, at: [.topLeft, .topRight])
     func rounded(with radius: CGFloat,at corners: [UIRectCorner]) {
         roundedCorner(with: radius, topLeft: corners.contains(.topLeft), topRight: corners.contains(.topRight), bottomLeft: corners.contains(.bottomLeft), bottomRight: corners.contains(.bottomRight))
@@ -250,6 +258,252 @@ extension Date {
     }
 }
 // ---------------End
+
+
+extension String {
+    func isValidEmailAddress() -> Bool {
+        return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+    }
+    
+    func isValidPhone() -> Bool {
+        let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result = phoneTest.evaluate(with: self)
+        return result
+    }
+}
+
+//-----------ViewController extension ------------------------
+extension UIViewController {
+    var isModal: Bool {
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
+    }
+    
+    ///        showSettingsAlert(toAccess: "Hi there") { (_ didAllow) in
+    ///           print("Successed!!") }
+    func showSettingsAlert(toAccess access: String,_ completionHandler: @escaping (_ accessGranted: Bool) -> Void) {
+        let alert = UIAlertController(title: nil, message: "This app requires access to \(access) to proceed. Go to Settings to grant access.", preferredStyle: .alert)
+        if
+            let settings = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(settings) {
+            alert.addAction(UIAlertAction(title: "Open Settings", style: .default) { action in
+                completionHandler(false)
+                UIApplication.shared.open(settings)
+            })
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { action in
+            completionHandler(false)
+        })
+        present(alert, animated: true)
+    }
+    /// emailText = emailTextField.text
+    /// let value = isValidEmailAddress(emailAddressString: emailText)
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            if results.count == 0
+            {
+                returnValue = false
+            }
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        return  returnValue
+    }
+    ///  dismissKeyboardOnViewTap()
+    @objc func dismissKeyboardOnViewTap() {
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_ :))))
+    }
+    
+    @objc private func dismissKeyboard(_ sender: UIGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
+    struct Loader {
+        static var loaderViewBG: UIView?
+    }
+   ///   self.showLoader()
+    func showLoader() {
+        if let window = UIWindow.appWindow() {
+            let view = UIView(frame: window.bounds)
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            var aIV: UIActivityIndicatorView!
+            if #available(iOS 13.0, *) {
+                aIV = UIActivityIndicatorView(style: .large)
+            } else {
+                // Fallback on earlier versions
+                aIV = UIActivityIndicatorView(style: .whiteLarge)
+            }
+            view.addSubview(aIV)
+            aIV.center = view.center
+            aIV.startAnimating()
+            window.addSubview(view)
+            Loader.loaderViewBG = view
+        }
+    }
+    
+    ///  self.hideLoader()
+    func hideLoader() {
+        if let ldView = Loader.loaderViewBG {
+            ldView.removeFromSuperview()
+        }
+    }
+    
+    ///   goBackToPreviousScreen()
+    @objc func goBackToPreviousScreen() {
+        if let navVC = self.navigationController {
+            if navVC.viewControllers.count == 1 {
+                self.dismiss(animated: true)
+            } else {
+                navVC.popViewController(animated: true)
+            }
+        } else {
+            self.dismiss(animated: true)
+        }
+    }
+    
+    @objc func goBackToPreviousScreen(_ block: (() -> ())? = nil) {
+        if let navVC = self.navigationController {
+            if navVC.viewControllers.count == 1 {
+                navVC.dismiss(animated: true, completion: block)
+            } else {
+                navVC.popViewController(animated: true)
+                DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                    if let block = block {
+                        block()
+                    }
+                })
+            }
+        } else {
+            self.dismiss(animated: true, completion: block)
+        }
+    }
+    
+    private struct ToastHolder {
+        static var toast: UILabel! = nil
+        static var toastSeverity: ToastSeverityType! = nil
+    }
+    
+    ///  showToast(message: "iOS Developer")
+    ///  showToast(message: "Naveen kumar", toastType: .appTheme, removeAfter: 5)
+    func showToast(message: String, toastType: ToastSeverityType = .appTheme, removeAfter duration: Double? = nil) {
+        if let window = UIWindow.appWindow() {
+            if ToastHolder.toast == nil {
+                let width = window.frame.width - 40
+                let textLabel = UILabel()
+                ToastHolder.toastSeverity = toastType
+                setToastColor(toastType, textLabel)
+                textLabel.text = message
+                textLabel.clipsToBounds = true
+                textLabel.layer.cornerRadius = 10
+                textLabel.numberOfLines = 0
+                textLabel.font = UIFont(name: "Avenir", size: 16)
+                textLabel.textAlignment = .center
+                ToastHolder.toast = textLabel
+                let height = textLabel.textHeight(withWidth: width)
+                textLabel.frame = CGRect(x: 20, y: -height, width: width, height: height + 10)
+                window.addSubview(textLabel)
+                UIView.animate(withDuration: 0.25, animations: {
+                    textLabel.transform = CGAffineTransform.init(translationX: 0, y: height + 40)
+                }) { (_) in
+                    if let duration = duration {
+                        if duration > 0 {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: {
+                                self.removeToast()
+                            })
+                        }
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + Double(message.count)/15, execute: {
+                            self.removeToast()
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    fileprivate func setToastColor(_ toastType: ToastSeverityType, _ textLabel: UILabel) {
+        switch toastType {
+        case .correct:
+            textLabel.backgroundColor = Global.shared.colorSchemeGreen
+            textLabel.textColor = .darkGray
+            break
+        case .warning:
+            textLabel.backgroundColor = Global.shared.colorSchemeYellow
+            textLabel.textColor = .darkGray
+            break
+        case .incorrect:
+            textLabel.backgroundColor = UIColor.red
+            textLabel.textColor = .white
+            break
+        case .appTheme:
+            textLabel.backgroundColor = Global.shared.primarycolorScheme
+            textLabel.textColor = Global.shared.colorSchemeWhite
+            break
+        }
+    }
+    
+    ///  removeToast()
+    ///  removeToast(after: 5, message: "Failed !!", toastType: .incorrect, removeWithColorChange: true)
+    func removeToast(after duration: Double = 0, message: String = "", toastType: ToastSeverityType = .appTheme, removeWithColorChange: Bool = false) {
+        if let textLabel = ToastHolder.toast {
+            textLabel.text = message
+            if removeWithColorChange {
+                setToastColor(toastType, textLabel)
+            } else {
+                if let toastType = ToastHolder.toastSeverity {
+                    setToastColor(toastType, textLabel)
+                } else {
+                    setToastColor(toastType, textLabel)
+                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                UIView.animate(withDuration: 0.25, animations: {
+                    textLabel.transform = CGAffineTransform.identity
+                }, completion: { (_) in
+                    ToastHolder.toast = nil
+                    textLabel.removeFromSuperview()
+                })
+            }
+        }
+    }
+}
+
+extension UIWindow {
+    class func appWindow() -> UIWindow? {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive}).map({$0 as? UIWindowScene}).compactMap({$0}).first?.windows.filter({$0.isKeyWindow}).first
+        } else {
+            return UIApplication.shared.keyWindow!
+        }
+    }
+}
+
+extension UILabel {
+    func textHeight(withWidth width: CGFloat) -> CGFloat {
+        guard let text = text else { return 0 }
+        return text.height(withWidth: width, font: font)
+    }
+}
+
+extension String {
+    func height(withWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let actualSize = self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [.font: font], context: nil)
+        return actualSize.height
+    }
+}
+
+//-----------ViewController extension (end)---------
 
 extension UIDevice {
     /// UIDevice.vibrate() --> call this way when you call
