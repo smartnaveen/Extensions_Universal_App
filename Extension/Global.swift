@@ -14,4 +14,16 @@ class Global: NSObject {
     let colorSchemeYellow = UIColor.yellow
     let primarycolorScheme = UIColor.blue
     let colorSchemeWhite = UIColor.white
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
 }
+
+let INTERNET_ERROR = "Internet not available."
+
+
+let BASE_URL = "https://api.unsplash.com/photos/"
+let API_KEY = "kutQ6I5P-RcvxF6VqQ1oMad7F15hdGrSVPmutPRbAUw"
+

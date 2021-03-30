@@ -55,6 +55,17 @@ extension UIImageView {
         }
     }
 }
+// convert uiview to uiimage(Screenshot of uiview in uiimage)
+// let image = UIImage(view: canvasView)
+extension UIImage {
+    convenience init(view: UIView) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in:UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: image!.cgImage!)
+    }
+}
 
 extension UIView {
     /// appleLogoImageView.makeCircular(radius: 12)

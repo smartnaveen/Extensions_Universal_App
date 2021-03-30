@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC09C42C32B7030B69201634 /* Pods_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */; };
 		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
 		E74B9BA22605018F00D68644 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B9BA12605018F00D68644 /* Global.swift */; };
 		E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292125FA6BE300363F6B /* AppDelegate.swift */; };
@@ -17,9 +18,15 @@
 		E759292E25FA6BE500363F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */; };
 		E759293725FA6BFF00363F6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759293625FA6BFF00363F6B /* Extensions.swift */; };
 		E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766A3652601A77200FD0961 /* Extension_Enum.swift */; };
+		E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B37260A644100F7C44C /* NetworkReachability.swift */; };
+		E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */; };
+		E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B43260BB22300F7C44C /* GradientButton.swift */; };
+		E7802B67260E280B00F7C44C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B66260E280B00F7C44C /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362C0C96959DB0EFD51E0628 /* Pods-Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.release.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.release.xcconfig"; sourceTree = "<group>"; };
+		C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E74B9BA12605018F00D68644 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E759291E25FA6BE300363F6B /* Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +39,11 @@
 		E759292F25FA6BE500363F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E759293625FA6BFF00363F6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E766A3652601A77200FD0961 /* Extension_Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Enum.swift; sourceTree = "<group>"; };
+		E7802B37260A644100F7C44C /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerOld.swift; sourceTree = "<group>"; };
+		E7802B43260BB22300F7C44C /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		E7802B66260E280B00F7C44C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E9F6DFD903AA6AD0C3B22D7F /* Pods-Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.debug.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC09C42C32B7030B69201634 /* Pods_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85F1422508AA6B9AFA2C6BA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E759291525FA6BE300363F6B = {
 			isa = PBXGroup;
 			children = (
 				E759292025FA6BE300363F6B /* Extension */,
 				E759291F25FA6BE300363F6B /* Products */,
+				FFFD88170C47E144DA5602EF /* Pods */,
+				85F1422508AA6B9AFA2C6BA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,19 +87,72 @@
 		E759292025FA6BE300363F6B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E759292125FA6BE300363F6B /* AppDelegate.swift */,
-				E759292325FA6BE300363F6B /* SceneDelegate.swift */,
-				E759292525FA6BE300363F6B /* ViewController.swift */,
-				E759292725FA6BE300363F6B /* Main.storyboard */,
-				E759292A25FA6BE500363F6B /* Assets.xcassets */,
-				E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */,
-				E759292F25FA6BE500363F6B /* Info.plist */,
+				E7802B28260A58BD00F7C44C /* AppDelegate */,
+				E7802B29260A58D000F7C44C /* Controllers */,
+				E7802B2A260A58DA00F7C44C /* Views */,
+				E7802B2B260A58E700F7C44C /* AppEssential */,
 				E74B9BA12605018F00D68644 /* Global.swift */,
 				E759293625FA6BFF00363F6B /* Extensions.swift */,
 				E766A3652601A77200FD0961 /* Extension_Enum.swift */,
 				E71B26C125FE9D23001AA5BB /* GradientView.swift */,
+				E7802B43260BB22300F7C44C /* GradientButton.swift */,
+				E7802B66260E280B00F7C44C /* APIManager.swift */,
+				E7802B2C260A593300F7C44C /* ApiManager */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E7802B28260A58BD00F7C44C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E759292125FA6BE300363F6B /* AppDelegate.swift */,
+				E759292325FA6BE300363F6B /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E7802B29260A58D000F7C44C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E759292525FA6BE300363F6B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E7802B2A260A58DA00F7C44C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E759292725FA6BE300363F6B /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7802B2B260A58E700F7C44C /* AppEssential */ = {
+			isa = PBXGroup;
+			children = (
+				E759292A25FA6BE500363F6B /* Assets.xcassets */,
+				E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */,
+				E759292F25FA6BE500363F6B /* Info.plist */,
+			);
+			path = AppEssential;
+			sourceTree = "<group>";
+		};
+		E7802B2C260A593300F7C44C /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
+				E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */,
+			);
+			name = ApiManager;
+			sourceTree = "<group>";
+		};
+		FFFD88170C47E144DA5602EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9F6DFD903AA6AD0C3B22D7F /* Pods-Extension.debug.xcconfig */,
+				362C0C96959DB0EFD51E0628 /* Pods-Extension.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E759293225FA6BE500363F6B /* Build configuration list for PBXNativeTarget "Extension" */;
 			buildPhases = (
+				FD410CEAA6361955E21F96B1 /* [CP] Check Pods Manifest.lock */,
 				E759291A25FA6BE300363F6B /* Sources */,
 				E759291B25FA6BE300363F6B /* Frameworks */,
 				E759291C25FA6BE300363F6B /* Resources */,
+				68DEBF6BE3CCCEDE9B8B8ADD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,18 +222,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		68DEBF6BE3CCCEDE9B8B8ADD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Extension/Pods-Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Extension/Pods-Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Extension/Pods-Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD410CEAA6361955E21F96B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E759291A25FA6BE300363F6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E759292625FA6BE300363F6B /* ViewController.swift in Sources */,
+				E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */,
 				E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */,
 				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
+				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
+				E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
 				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,
 				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
+				E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,12 +423,13 @@
 		};
 		E759293325FA6BE500363F6B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9F6DFD903AA6AD0C3B22D7F /* Pods-Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T7ZWU24QF;
-				INFOPLIST_FILE = Extension/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Extension/AppEssential/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,12 +443,13 @@
 		};
 		E759293425FA6BE500363F6B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 362C0C96959DB0EFD51E0628 /* Pods-Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T7ZWU24QF;
-				INFOPLIST_FILE = Extension/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Extension/AppEssential/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
