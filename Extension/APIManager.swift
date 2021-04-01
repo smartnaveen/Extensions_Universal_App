@@ -12,7 +12,7 @@ import Alamofire
 class APIManager: NSObject {
     static let shared = APIManager()
      // MARK:- FetchData not generic means not model type
-    func fetchData(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping ([String:Any]) -> (), failure: @escaping(String)->()){
+    func fetchData(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (Any) -> (), failure: @escaping(String)->()){
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(url)
         AF.request(url, method: requestType, parameters: dict, encoding: URLEncoding.default , headers: nil).responseJSON { (response: AFDataResponse<Any>) in
@@ -22,9 +22,7 @@ class APIManager: NSObject {
             switch(response.result){
             case .success(let response):
                 print("result \n \(response)")
-                if let safeResponse = response as? [String: Any] {
-                    completion(safeResponse)
-                }
+                    completion(response)
             case .failure(let error):
                 failure(error.localizedDescription)
                 Global.shared.showAlert(title: "Error", message: error.localizedDescription)
@@ -38,7 +36,7 @@ class APIManager: NSObject {
     func fetchGenericData<T:Decodable>(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (T) -> (), failure: @escaping(String)->()){
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(url)
-        AF.request(url, method: requestType, parameters: dict, encoding: JSONEncoding.default , headers: [:]).responseJSON { (response:AFDataResponse<Any>) in
+        AF.request(url, method: requestType, parameters: dict, encoding: URLEncoding.default , headers: [:]).responseJSON { (response:AFDataResponse<Any>) in
             print(response.debugDescription)
             print("Response =====  ",response.result)
             switch(response.result){
@@ -72,3 +70,49 @@ class APIManager: NSObject {
     
     
 }
+
+ // MARK:- HOW CAN I USED GET API
+/*
+ -------------------------- FOR GENRIC API --------------------------
+ *************  Response are comming array of dictionary -----> [{}]
+ let safeUrl = "https://api.unsplash.com/photos/?client_id=kutQ6I5P-RcvxF6VqQ1oMad7F15hdGrSVPmutPRbAUw"
+ APIManager.shared.fetchGenericData(urlString: safeUrl, dict: [:], requestType: .get) { (model: [Person]) in
+     for i in model{
+         debugPrint(i.user.profile_image.large)
+     }
+ } failure: { (error) in
+     debugPrint(error)
+ }
+
+ struct Person: Codable {
+     let user: User
+ }
+
+ struct User: Codable {
+     let profile_image: Large
+ }
+
+ struct Large: Codable {
+     let large: String
+     
+ }
+ 
+ --------------------------  FETCHDATA NOT GENERIC  --------------------------
+ APIManager.shared.fetchData(urlString: safeUrl, dict: [:], requestType: .get) { (result) in
+     debugPrint(result)
+     if let safeResponse = result as? [Any]{
+         for safeData in safeResponse{
+             if let safeDataDict = safeData as? [String: Any] {
+                 debugPrint(safeDataDict["alt_description"]!)
+             }
+         }
+     }
+ } failure: { (error) in
+     debugPrint(error)
+ }
+ 
+ */
+
+
+// MARK:- HOW CAN I USED POST API
+

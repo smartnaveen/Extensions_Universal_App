@@ -97,6 +97,7 @@
 				E71B26C125FE9D23001AA5BB /* GradientView.swift */,
 				E7802B43260BB22300F7C44C /* GradientButton.swift */,
 				E7802B66260E280B00F7C44C /* APIManager.swift */,
+				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E7802B2C260A593300F7C44C /* ApiManager */,
 			);
 			path = Extension;
@@ -140,7 +141,6 @@
 		E7802B2C260A593300F7C44C /* ApiManager */ = {
 			isa = PBXGroup;
 			children = (
-				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */,
 			);
 			name = ApiManager;

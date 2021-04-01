@@ -11,15 +11,14 @@ import Reachability
 
 class NetworkReachability: NSObject {
     static let shared = NetworkReachability()
-    let reachability = try? Reachability()  //Reachability()
+    let reachability = try? Reachability()
     var isNetworkAvailable : Bool {
         return reachabilityStatus != .unavailable
-
     }
     var reachabilityStatus: Reachability.Connection = .unavailable
     @objc func reachabilityChanged(notification: Notification) {
-        let reachability = notification.object as! Reachability
-        switch reachability.connection {
+        reachabilityStatus = notification.object as? Reachability.Connection ?? reachability?.connection as! Reachability.Connection
+        switch reachabilityStatus {
         case .none:
             debugPrint("Network became unreachable")
         case .wifi:
@@ -54,8 +53,23 @@ class NetworkReachability: NSObject {
 }
 
 
+ // MARK:- HOW CAN I USED NETWORKREACHABILITY CLASS
+/*
+ Step1 - NetworkReachability.shared.startMonitoring() -> In didfinishlaunchingwithoption in appdelegate.
+ Step2 -   if NetworkReachability.shared.isNetworkAvailable {
+                 debugPrint("Internet")
+            }else {
+                 debugPrint("No Internet")
+            }
+ */
 
 
+
+
+
+
+
+ // MARK:- Not used 
     
 //    func handleReachability() {
 //        if NetworkReachability.shared.isNetworkAvailable{
