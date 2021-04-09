@@ -69,6 +69,61 @@ class APIManager: NSObject {
     }
     
     
+    
+    
+    //new
+//    func requestUploadWith(endUrl: String, imageName: String, imagesData: [Data]?, parameters: [String : Any], onCompletion: ((Any) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+//            //let url = "http://google.com" /* your API url */
+//            print("===   url ==== ",endUrl)
+//            let headers: HTTPHeaders = [
+//                /* "Authorization": "your_access_token",  in case you need authorization header */
+//                "Content-type": "multipart/form-data",
+//            ]
+//
+//            AF.upload(multipartFormData: { (multipartFormData) in
+//                if imagesData != nil{
+//                    for (index,imageData) in imagesData!.enumerated() {
+//                    multipartFormData.append(imageData, withName:  imageName, fileName: "\(self.getName())_\(index).jpeg", mimeType: "image/jpeg")
+//                }
+//                }
+//                for (key, value) in parameters {
+//                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+//                }
+//
+//            }, to: endUrl, usingThreshold: UInt64.init(), method: .post, headers: headers) { (result) in
+//                switch result{
+//
+//                case .success(let upload, _, _):
+//                    upload.uploadProgress(closure: { (progress) in
+//                        print("progress",progress)
+//                    })
+//                        upload.responseJSON { response in
+//                            print(response.debugDescription)
+//                            switch(response.result){
+//                            case .success(_):
+//                                let result = response.result.value as! [String:Any]
+//                                onCompletion?(result)
+////                                print(result)
+//                                if ((result["error"] as? Int) == 1){
+////                                    let custError: NSError = NSError(domain:.init("Custom Error") , code: 200, userInfo: [:])
+////                                    onError?(custError)
+//                                     Global.shared.hideLoader()
+//                                    Global.shared.showAlert("error")
+//                                    return
+//                                }
+////                                onCompletion?(response.data!)
+//                            case .failure(let error):
+//                                print("Error in uploading: \(error.localizedDescription)")
+//                                onError?(error)
+//                            }
+//                        }
+//                case .failure(let error):
+//                    print("Error in upload: \(error.localizedDescription)")
+//                    onError?(error)
+//                }
+//            }
+//        }
+    
 }
 
  // MARK:- HOW CAN I USED GET API

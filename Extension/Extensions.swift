@@ -173,6 +173,28 @@ extension UIColor {
     }
 }
 
+extension UIColor {
+//    let myColor = UIColor(hexFromString: "4F9BF5")
+//    let myColor1 = UIColor(hexFromString: "#4F9BF5")
+//    let myColor2 = UIColor(hexFromString: "#4F9BF5", alpha: 0.5)
+    convenience init(hexFromString:String, alpha:CGFloat = 1.0) {
+        var cString:String = hexFromString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var rgbValue:UInt64 = 10066329
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        if ((cString.count) == 6) {
+            Scanner(string: cString).scanHexInt64(&rgbValue)
+        }
+        self.init(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: alpha
+        )
+    }
+}
+
 extension UserDefaults {
     /// UserDefaults.standard.setObjectValue(taylor, forKey: key)
     /// taylor object of class/struct
