@@ -20,6 +20,7 @@
 		E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766A3652601A77200FD0961 /* Extension_Enum.swift */; };
 		E774BFAB261F59C60045907A /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = E774BFAA261F59C60045907A /* Colors.plist */; };
 		E774BFAE2620AFCA0045907A /* appDsysms.png in Resources */ = {isa = PBXBuildFile; fileRef = E774BFAD2620AFCA0045907A /* appDsysms.png */; };
+		E774BFB326217BE00045907A /* imgurK.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774BFB226217BE00045907A /* imgurK.swift */; };
 		E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B37260A644100F7C44C /* NetworkReachability.swift */; };
 		E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */; };
 		E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B43260BB22300F7C44C /* GradientButton.swift */; };
@@ -43,6 +44,7 @@
 		E766A3652601A77200FD0961 /* Extension_Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Enum.swift; sourceTree = "<group>"; };
 		E774BFAA261F59C60045907A /* Colors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
 		E774BFAD2620AFCA0045907A /* appDsysms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appDsysms.png; sourceTree = "<group>"; };
+		E774BFB226217BE00045907A /* imgurK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgurK.swift; sourceTree = "<group>"; };
 		E7802B37260A644100F7C44C /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerOld.swift; sourceTree = "<group>"; };
 		E7802B43260BB22300F7C44C /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				E7802B29260A58D000F7C44C /* Controllers */,
 				E7802B2A260A58DA00F7C44C /* Views */,
 				E7802B2B260A58E700F7C44C /* AppEssential */,
+				E774BFB126217B850045907A /* Imgur_Upload_API */,
 				E774BFA9261F58520045907A /* appDsymsUpload */,
 				E74B9BA12605018F00D68644 /* Global.swift */,
 				E759293625FA6BFF00363F6B /* Extensions.swift */,
@@ -115,6 +118,14 @@
 				E774BFAD2620AFCA0045907A /* appDsysms.png */,
 			);
 			path = appDsymsUpload;
+			sourceTree = "<group>";
+		};
+		E774BFB126217B850045907A /* Imgur_Upload_API */ = {
+			isa = PBXGroup;
+			children = (
+				E774BFB226217BE00045907A /* imgurK.swift */,
+			);
+			path = Imgur_Upload_API;
 			sourceTree = "<group>";
 		};
 		E7802B28260A58BD00F7C44C /* AppDelegate */ = {
@@ -287,6 +298,7 @@
 			files = (
 				E759292625FA6BE300363F6B /* ViewController.swift in Sources */,
 				E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */,
+				E774BFB326217BE00045907A /* imgurK.swift in Sources */,
 				E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */,
 				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,

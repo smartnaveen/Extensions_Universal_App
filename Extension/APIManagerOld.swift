@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class APIManagerOld: NSObject {
+    
     static let shared = APIManagerOld()
 //    func fetchGenericData<T:Decodable>(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (T) -> (), failure: @escaping(String)->()){
 //        let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -72,7 +73,6 @@ class APIManagerOld: NSObject {
         
 
 //    func requestUploadWith(endUrl: String,imageName: String, imagesData: [Data]?, parameters: [String : Any], onCompletion: (([String:Any]) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
-//
 //            //let url = "http://google.com" /* your API url */
 //            print("===   url ==== ",endUrl)
 //            let headers: HTTPHeaders = [
@@ -83,14 +83,14 @@ class APIManagerOld: NSObject {
 //            AF.upload(multipartFormData: { (multipartFormData) in
 //                if imagesData != nil{
 //                    for (index,imageData) in imagesData!.enumerated() {
-//                    multipartFormData.append(imageData, withName:  imageName, fileName: "\(self.getName())_\(index).jpeg", mimeType: "image/jpeg")
-//                }
+//                        multipartFormData.append(imageData, withName:  imageName, fileName: "\(self.getName())_\(index).jpeg", mimeType: "image/jpeg")
+//                    }
 //                }
 //                for (key, value) in parameters {
 //                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
 //                }
-//
-//            }, to: endUrl, usingThreshold: UInt64.init(), method: .post, headers: headers) { (result) in
+//            }, to: endUrl, usingThreshold: UInt64.init(), method: .post, headers: headers, interceptor: nil, fileManager: FileManager.default, requestModifier: nil
+//                . {(result) in
 //                switch result{
 //                case .success(let upload, _, _):
 //                    upload.uploadProgress(closure: { (progress) in
@@ -120,17 +120,21 @@ class APIManagerOld: NSObject {
 //                    print("Error in upload: \(error.localizedDescription)")
 //                    onError?(error)
 //                }
-//            }
-//        }
-
-//        func getName()->String {
-//            let date = Date()
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
-//            formatter.timeZone = TimeZone(secondsFromGMT: 0)
-//            formatter.locale = Locale(identifier: "en_US_POSIX")
-//            print(formatter.string(from: date))
-//            return  formatter.string(from: date)
-//        }
-
+//            })
+//    }
+//post
+//upload
+//delete
+    
+    
+    
+    func getName()->String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        print(formatter.string(from: date))
+        return  formatter.string(from: date)
     }
+}
