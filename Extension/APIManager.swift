@@ -194,4 +194,40 @@ class APIManager: NSObject {
 
 
 // MARK:- HOW CAN I USED POST API
-
+/*
+ // Post is used for data send on server with using param
+ 
+ //-------------------------- FOR GENRIC API --------------------------
+ let safeUrl = "https://reqres.in/api/register"
+ let param = ["name": "Naveen Kumar", "job": "leader"] as [String : Any]
+ 
+ APIManager.shared.fetchGenericData(urlString: safeUrl, dict: param, requestType: .post) { (model: DemoModel ) in
+ print(model.id, model.token)
+ } failure: { (error) in
+ Global.shared.showAlert(title: error, message: "")
+ }
+ 
+ 
+ struct DemoModel: Codable {
+     let id: Int
+     let token: String
+ }
+ 
+ struct demoData: Codable {
+     let first_name: String
+ }
+ 
+ 
+ --------------------------  FETCHDATA NOT GENERIC  --------------------------
+ let safeUrl = "https://reqres.in/api/register"
+ let param = ["email": "eve.holt@reqres.in", "password": "pistol"]
+ APIManager.shared.fetchData(urlString: safeUrl, dict: param, requestType: .post) { (result) in
+     debugPrint(result)
+     if let safeResponseDict = result as? [String: Any] {
+         debugPrint(safeResponseDict["token"]!)
+     }
+ } failure: { (error) in
+     Global.shared.showAlert(title: error, message: "")
+ }
+ 
+ */

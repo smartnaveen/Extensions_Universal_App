@@ -9,7 +9,10 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
+    
     let imageArr: [UIImage] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(105, 60, 114)
@@ -24,11 +27,10 @@ class ViewController: UIViewController {
                 imageData.append(imgData)
             }
         }
-        
+
         let param = ["user_id": ""]
-        
+
         requestUploadWith(endURL: "IMGUR_BASE_URL", imageName: "message", imagesData: imageData, parameters: param) { (result) in
-//            Global.shared.hideLoader()
             debugPrint(result)
 //            if result["error"] as? String == "1"{
 //                Global.shared.showAlert("\(result["status"]!)")
@@ -43,6 +45,7 @@ class ViewController: UIViewController {
         }
     }
 }
+
 
 extension ViewController {
     //MARK: - Upload Image
@@ -96,3 +99,22 @@ extension ViewController {
     }
 }
 
+
+// MARK:- POST API
+extension ViewController {
+   func handleAPI() {
+       let safeUrl = "https://reqres.in/api/register"
+     //  let param = ["name": "Naveen Kumar", "job": "leader"] as [String : Any]
+       
+       let param = ["email": "eve.holt@reqres.in", "password": "pistol"]
+
+       APIManager.shared.fetchData(urlString: safeUrl, dict: param, requestType: .post) { (result) in
+           debugPrint(result)
+           if let safeResponseDict = result as? [String: Any] {
+               debugPrint(safeResponseDict["token"]!)
+           }
+       } failure: { (error) in
+           Global.shared.showAlert(title: error, message: "")
+       }
+   }
+}
