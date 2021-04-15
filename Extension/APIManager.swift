@@ -8,9 +8,15 @@
 import UIKit
 import Foundation
 import Alamofire
+import SVProgressHUD
+import AVFoundation
+
 
 class APIManager: NSObject {
     static let shared = APIManager()
+    
+    var player: AVPlayer?
+    
      // MARK:- FetchData not generic means not model type
     func fetchData(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (Any) -> (), failure: @escaping(String)->()){
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -69,6 +75,24 @@ class APIManager: NSObject {
     }
     
     
+    // MARK:- For downloading audio From Url
+        func downloadMediaFile(_ musicURL: String){
+            AF.request("\(musicURL)").downloadProgress(closure : { (progress) in
+                print(progress.fractionCompleted)
+                SVProgressHUD.showProgress(Float(progress.fractionCompleted))
+            }).responseData{ (response) in
+                print(response)
+                SVProgressHUD.dismiss()
+                self.playSound(soundUrl: musicURL)
+            }
+        }
+        
+        func playSound(soundUrl: String) {
+            guard let url = URL.init(string: soundUrl) else { return }
+            let playerItem = AVPlayerItem.init(url: url)
+            player = AVPlayer.init(playerItem: playerItem)
+            player?.play()
+        }
     
     
     //new

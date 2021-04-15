@@ -6,5 +6,7 @@ target 'Extension' do
   # Pods for Extension
 pod 'ReachabilitySwift'
 pod 'Alamofire', '~> 5.2'
+pod 'SVProgressHUD'
+
 
 end
