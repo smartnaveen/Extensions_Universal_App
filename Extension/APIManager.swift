@@ -61,9 +61,45 @@ class APIManager: NSObject {
             }
         }.resume()
     }
+    
+    
+    // MARK:- Upload Images on Server with filename
+     func requestUploadWith(endURL: String, parameters: [String : Any], imagesData: [Data]?, imageName: String, progressCompletion: @escaping (_ percent: Float) -> Void, onCompletion: @escaping (_ result: Any) -> Void, onError: @escaping (_ error: Error) -> Void){
+        print("===   url ==== ", endURL)
+        let headers: HTTPHeaders = [
+            /* "Authorization": "your_access_token",  in case you need authorization header */
+            "Content-type": "multipart/form-data",
+            "Authorization": "4d50b81f78cafb2b4a1cddfe9b1260f8d2e318c7",
+            
+        ]
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                if imagesData != nil{
+                    for (index,imageData) in imagesData!.enumerated() {
+                        multipartFormData.append(imageData, withName: imageName, fileName: "\(self.getName())_\(index).png", mimeType: "image/jpeg")
+                    }
+                }
+                
+                for (key, value) in parameters {
+                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                }
+            },
+            to: endURL, usingThreshold: UInt64.init(), method: .post, headers: headers)
+            .uploadProgress { progress in
+                progressCompletion(Float(progress.fractionCompleted))
+            }
+            .response { response in
+                debugPrint(response)
+                switch response.result{
+                case .success(let data):
+                    onCompletion(data!)
+                case .failure(let error):
+                    onError(error)
+                }
+            }
+    }
  
-    
-    
+ // MARK:- Get current Data with Time
     func getName()->String {
         let date = Date()
         let formatter = DateFormatter()
@@ -76,6 +112,7 @@ class APIManager: NSObject {
     
     
     // MARK:- For downloading audio From Url
+    // downloadMediaFile(putURL) -> call the function when download from url
         func downloadMediaFile(_ musicURL: String){
             AF.request("\(musicURL)").downloadProgress(closure : { (progress) in
                 print(progress.fractionCompleted)
@@ -93,61 +130,6 @@ class APIManager: NSObject {
             player = AVPlayer.init(playerItem: playerItem)
             player?.play()
         }
-    
-    
-    //new
-//    func requestUploadWith(endUrl: String, imageName: String, imagesData: [Data]?, parameters: [String : Any], onCompletion: ((Any) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
-//            //let url = "http://google.com" /* your API url */
-//            print("===   url ==== ",endUrl)
-//            let headers: HTTPHeaders = [
-//                /* "Authorization": "your_access_token",  in case you need authorization header */
-//                "Content-type": "multipart/form-data",
-//            ]
-//
-//            AF.upload(multipartFormData: { (multipartFormData) in
-//                if imagesData != nil{
-//                    for (index,imageData) in imagesData!.enumerated() {
-//                    multipartFormData.append(imageData, withName:  imageName, fileName: "\(self.getName())_\(index).jpeg", mimeType: "image/jpeg")
-//                }
-//                }
-//                for (key, value) in parameters {
-//                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-//                }
-//
-//            }, to: endUrl, usingThreshold: UInt64.init(), method: .post, headers: headers) { (result) in
-//                switch result{
-//
-//                case .success(let upload, _, _):
-//                    upload.uploadProgress(closure: { (progress) in
-//                        print("progress",progress)
-//                    })
-//                        upload.responseJSON { response in
-//                            print(response.debugDescription)
-//                            switch(response.result){
-//                            case .success(_):
-//                                let result = response.result.value as! [String:Any]
-//                                onCompletion?(result)
-////                                print(result)
-//                                if ((result["error"] as? Int) == 1){
-////                                    let custError: NSError = NSError(domain:.init("Custom Error") , code: 200, userInfo: [:])
-////                                    onError?(custError)
-//                                     Global.shared.hideLoader()
-//                                    Global.shared.showAlert("error")
-//                                    return
-//                                }
-////                                onCompletion?(response.data!)
-//                            case .failure(let error):
-//                                print("Error in uploading: \(error.localizedDescription)")
-//                                onError?(error)
-//                            }
-//                        }
-//                case .failure(let error):
-//                    print("Error in upload: \(error.localizedDescription)")
-//                    onError?(error)
-//                }
-//            }
-//        }
-    
 }
 
  // MARK:- HOW CAN I USED GET API
@@ -228,6 +210,35 @@ class APIManager: NSObject {
      }
  } failure: { (error) in
      Global.shared.showAlert(title: error, message: "")
+ }
+ 
+ */
+
+
+// MARK:- HOW CAN I USED UPLOAD IMAGES/DATA ON SERVER
+/*
+ 
+ var imageArr: [UIImage] = []
+
+ imageArr.append(UIImage(named: "naveenPhotos.jpg")!)
+
+ var imageData = [Data]()
+ for image in imageArr{
+     if let imgData: Data = image.jpegData(compressionQuality: 0.5) {
+         imageData.append(imgData)
+     }
+ }
+ 
+ let safeURL = "https://api.imgur.com/3/upload"
+ let param = ["image": imageArr.first!] as [String : Any]
+ 
+ 
+ requestUploadWith(endURL: safeURL, parameters: param, imagesData: imageData, imageName: "image") { (percent) in
+     print("Status: \(percent)")
+ } onCompletion: { (result) in
+     print(result)
+ } onError: { (error) in
+     Global.shared.showAlert(title: error.localizedDescription, message: "")
  }
  
  */

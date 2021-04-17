@@ -49,6 +49,8 @@
 		E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerOld.swift; sourceTree = "<group>"; };
 		E7802B43260BB22300F7C44C /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		E7802B66260E280B00F7C44C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E783D7B6262B4CED0028C3E0 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		E783D7B7262B4CED0028C3E0 /* naveenPhotos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naveenPhotos.jpg; sourceTree = "<group>"; };
 		E9F6DFD903AA6AD0C3B22D7F /* Pods-Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.debug.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		E759292025FA6BE300363F6B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E783D7B4262B4CE10028C3E0 /* Data */,
 				E7802B28260A58BD00F7C44C /* AppDelegate */,
 				E7802B29260A58D000F7C44C /* Controllers */,
 				E7802B2A260A58DA00F7C44C /* Views */,
@@ -107,7 +110,7 @@
 				E7802B66260E280B00F7C44C /* APIManager.swift */,
 				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
-				E7802B2C260A593300F7C44C /* ApiManager */,
+				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -163,12 +166,29 @@
 			path = AppEssential;
 			sourceTree = "<group>";
 		};
-		E7802B2C260A593300F7C44C /* ApiManager */ = {
+		E7802B2C260A593300F7C44C /* ApiManagerOLD */ = {
 			isa = PBXGroup;
 			children = (
 				E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */,
 			);
-			name = ApiManager;
+			name = ApiManagerOLD;
+			sourceTree = "<group>";
+		};
+		E783D7B4262B4CE10028C3E0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E783D7B5262B4CE80028C3E0 /* Images */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E783D7B5262B4CE80028C3E0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E783D7B7262B4CED0028C3E0 /* naveenPhotos.jpg */,
+				E783D7B6262B4CED0028C3E0 /* 3.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		FFFD88170C47E144DA5602EF /* Pods */ = {

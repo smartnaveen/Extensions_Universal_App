@@ -17,7 +17,8 @@ class NetworkReachability: NSObject {
     }
     var reachabilityStatus: Reachability.Connection = .unavailable
     @objc func reachabilityChanged(notification: Notification) {
-        reachabilityStatus = notification.object as? Reachability.Connection ?? reachability?.connection as! Reachability.Connection
+       // reachabilityStatus = notification.object as? Reachability.Connection ?? reachability?.connection as! Reachability.Connection
+        reachabilityStatus = reachability!.connection
         switch reachabilityStatus {
         case .none:
             debugPrint("Network became unreachable")
@@ -66,56 +67,7 @@ class NetworkReachability: NSObject {
 
 
 
-
-
-
- // MARK:- Not used 
-    
-//    func handleReachability() {
-//        if NetworkReachability.shared.isNetworkAvailable{
-//            Global.shared.showLoader()
-//            let param = ["user_id": ProfileHandler.shared.id!,"message_type": "text","message": messageTV.text!] as [String : Any]
-//             let url = BASE_URL + ADD_USER_FEED
-//            APIManager.shared.fetchData(urlString: url, dict: param, requestType: .post, completion: { (result) in
-//                debugPrint(result)
-//                Global.shared.hideLoader()
-//                if result["error"] as? String == "1" {
-//                    Global.shared.showAlert("\(result["status"]!)")
-//                }else{
-//                     //Dismiss View and reload feeds
-//                      self.dismiss(animated: false, completion: nil)
-//                }
-//            }) { (error) in
-//                Global.shared.hideLoader()
-//                Global.shared.showAlert(error)
-//            }
-//        }else{
-//            //       let param = ["user_id": ProfileHandler.shared.id!,"msg_type": "text/Image","message": "message","method" : "user_feed"] as [String : Any]
-//            var imageData = [Data]()
-//            for image in imageArr{
-//                let imgData: Data = image.jpegData(compressionQuality: 0.5)!
-//                imageData.append(imgData)
-//            }
-//            let url = BASE_URL + ADD_USER_FEED
-//           // let param = ["user_id": ProfileHandler.shared.id!,"message_type": "image","caption":messageTV.text!] as [String : Any]
-//            Global.shared.showLoader()
-//
-//            APIManager.shared.requestUploadWith(endUrl: url, imageName: "message", imagesData: imageData, parameters: param, onCompletion: { (result) in
-//                Global.shared.hideLoader()
-//                debugPrint(result)
-//                if result["error"] as? String == "1"{
-//                    Global.shared.showAlert("\(result["status"]!)")
-//                }else{
-//                    //Dismiss View and reload feeds
-//                    self.dismiss(animated: false, completion: nil)
-//                }
-//            }) { (err) in
-//                Global.shared.hideLoader()
-//                Global.shared.showAlert(err!.localizedDescription)
-//            }
-//        }
-//        }
-    
+ 
     
     
 
