@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC09C42C32B7030B69201634 /* Pods_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */; };
 		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
+		E738A53B262CC12B00A76112 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738A53A262CC12B00A76112 /* DesignableUITextField.swift */; };
 		E74B9BA22605018F00D68644 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B9BA12605018F00D68644 /* Global.swift */; };
 		E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292125FA6BE300363F6B /* AppDelegate.swift */; };
 		E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292325FA6BE300363F6B /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		362C0C96959DB0EFD51E0628 /* Pods-Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.release.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E738A53A262CC12B00A76112 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableUITextField.swift; path = ../../Image_Pick_Complete/Image_Pick_Complete/DesignableUITextField.swift; sourceTree = "<group>"; };
 		E74B9BA12605018F00D68644 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E759291E25FA6BE300363F6B /* Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E759292125FA6BE300363F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				E7802B43260BB22300F7C44C /* GradientButton.swift */,
 				E7802B66260E280B00F7C44C /* APIManager.swift */,
 				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
+				E738A53A262CC12B00A76112 /* DesignableUITextField.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -328,6 +331,7 @@
 				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,
 				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
 				E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */,
+				E738A53B262CC12B00A76112 /* DesignableUITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
