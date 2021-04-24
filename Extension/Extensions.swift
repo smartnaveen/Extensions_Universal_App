@@ -205,12 +205,14 @@ extension UIColor {
 }
 
 extension UserDefaults {
-    /// UserDefaults.standard.setObjectValue(taylor, forKey: key)
-    /// taylor object of class/struct
-    /// key = "save-data"
-    /// make sure class/struct must be codable protocol adopt
-    
-    /// print(FileManager.default.urls(for: .preferencePanesDirectory, in: .userDomainMask).first!)  ---> See Saved Data
+    /*
+      UserDefaults.standard.setObjectValue(taylor, forKey: key)
+      taylor object of class/struct
+      key = "save-data"
+      make sure class/struct must be codable protocol adopt
+     print(FileManager.default.urls(for: .preferencePanesDirectory, in: .userDomainMask).first!)  ---> See Saved Data
+     */
+   
     open func setObjectValue<T: Codable>(_ value: T, forKey key: String) {
         do {
             let encoder = JSONEncoder()
@@ -220,9 +222,13 @@ extension UserDefaults {
             print(error.localizedDescription)
         }
     }
-    ///UserDefaults.standard.getObjectValue(ofType: Person.self, forKey: key)
-    /// person is class/struct
-    /// key = "save-data"
+    
+    /*
+     UserDefaults.standard.getObjectValue(ofType: Person.self, forKey: key)
+     person is class/struct
+     key = "save-data"
+     */
+    
     open func getObjectValue<T: Codable>(ofType type: T.Type, forKey key: String) -> T? {
         if let data = UserDefaults.standard.data(forKey: key) {
             do {
@@ -238,9 +244,12 @@ extension UserDefaults {
 }
 
 extension UserDefaults {
-    /// if let img = UserDefaults.standard.imageForKey(key: key) {
-    /// appleLogoImageView.image = img
-    /// }
+    /*
+      if let img = UserDefaults.standard.imageForKey(key: key) {
+      appleLogoImageView.image = img
+      }
+     */
+    
     func imageForKey(key: String) -> UIImage? {
         var image: UIImage?
         if let imageData = data(forKey: key) {
@@ -255,7 +264,9 @@ extension UserDefaults {
         return image
     }
     
-    /// UserDefaults.standard.setImage(image: UIImage(named: "naveenPhotos"), forKey: key)
+    /*
+    UserDefaults.standard.setImage(image: UIImage(named: "naveenPhotos"), forKey: key)
+     */
     func setImage(image: UIImage?, forKey key: String) {
         var imageData: NSData?
         if let image = image {
@@ -283,9 +294,11 @@ extension String {
 
 // -----------------------String.toDate(…) and Date.toString(…) --------
 extension String {
-    /// let strDate = "2020-08-10 15:00:00"
-    /// let date = strDate.toDate(format: "yyyy-MM-dd HH:mm:ss")
-    /// let strDate2 = date?.toString(format: "yyyy-MM-dd HH:mm:ss")
+    /*
+      let strDate = "2020-08-10 15:00:00"
+      let date = strDate.toDate(format: "yyyy-MM-dd HH:mm:ss")
+      let strDate2 = date?.toString(format: "yyyy-MM-dd HH:mm:ss")
+     */
     
     func toDate(format: String) -> Date? {
         let df = DateFormatter()
@@ -326,8 +339,11 @@ extension UIViewController {
         return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
     
-    ///        showSettingsAlert(toAccess: "Hi there") { (_ didAllow) in
-    ///           print("Successed!!") }
+    /*
+     showSettingsAlert(toAccess: "Hi there") { (_ didAllow) in
+     print("Successed!!") }
+     */
+    
     func showSettingsAlert(toAccess access: String,_ completionHandler: @escaping (_ accessGranted: Bool) -> Void) {
         let alert = UIAlertController(title: nil, message: "This app requires access to \(access) to proceed. Go to Settings to grant access.", preferredStyle: .alert)
         if
@@ -343,8 +359,11 @@ extension UIViewController {
         })
         present(alert, animated: true)
     }
-    /// emailText = emailTextField.text
-    /// let value = isValidEmailAddress(emailAddressString: emailText)
+    
+    /*
+     emailText = emailTextField.text
+     let value = isValidEmailAddress(emailAddressString: emailText)
+     */
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
@@ -437,8 +456,11 @@ extension UIViewController {
         static var toastSeverity: ToastSeverityType! = nil
     }
     
-    ///  showToast(message: "iOS Developer")
-    ///  showToast(message: "Naveen kumar", toastType: .appTheme, removeAfter: 5)
+    /*
+      showToast(message: "iOS Developer")
+      showToast(message: "Naveen kumar", toastType: .appTheme, removeAfter: 5)
+     */
+
     func showToast(message: String, toastType: ToastSeverityType = .appTheme, removeAfter duration: Double? = nil) {
         if let window = UIWindow.appWindow() {
             if ToastHolder.toast == nil {
@@ -496,8 +518,10 @@ extension UIViewController {
         }
     }
     
-    ///  removeToast()
-    ///  removeToast(after: 5, message: "Failed !!", toastType: .incorrect, removeWithColorChange: true)
+    /*
+       removeToast()
+       removeToast(after: 5, message: "Failed !!", toastType: .incorrect, removeWithColorChange: true)
+     */
     func removeToast(after duration: Double = 0, message: String = "", toastType: ToastSeverityType = .appTheme, removeWithColorChange: Bool = false) {
         if let textLabel = ToastHolder.toast {
             textLabel.text = message
@@ -550,19 +574,24 @@ extension String {
 //-----------ViewController extension (end)---------
 
 extension UIDevice {
-    /// UIDevice.vibrate() --> call this way when you call
-    /// import AudioToolbox
+    /*
+     import AudioToolbox
+     UIDevice.vibrate() --> call this way when you call
+     */
     static func vibrate() {
         AudioServicesPlaySystemSound(1519)
     }
 }
 
 extension UIApplication {
-    /// if let topController = UIApplication.topViewController() {
-    /// self.view.backgroundColor = .red
-    /// topController.view.backgroundColor = .blue
-    /// print(topController)
-    /// }
+    /*
+     if let topController = UIApplication.topViewController() {
+     self.view.backgroundColor = .red
+     topController.view.backgroundColor = .blue
+     print(topController)
+     }
+     */
+ 
     class func topViewController(controller: UIViewController? = UIWindow.key?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
