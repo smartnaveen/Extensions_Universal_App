@@ -12,12 +12,14 @@ import AudioToolbox
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
+    
     /// appleLogoImageView.setImageColor(color: .black)
     func setImageColor(color: UIColor) {
         let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
         self.image = templateImage
         self.tintColor = color
     }
+    
     /// appleLogoImageView.loadImagesUsingCache(urlString: "", defaultImage: UIImage(systemName: ""))
     func loadImagesUsingCache(urlString: String, defaultImage: UIImage? = nil) {
         if let image = defaultImage {
@@ -46,6 +48,7 @@ extension UIImageView {
         })
         task.resume()
     }
+    
     /// appleLogoImageView.changeImageColor(to: .black)
     func changeImageColor(to color: UIColor) {
         if let currentImage = self.image {
@@ -55,9 +58,10 @@ extension UIImageView {
         }
     }
 }
-// convert uiview to uiimage(Screenshot of uiview in uiimage)
-// let image = UIImage(view: canvasView)
+
+// Convert UIView to UIImage(Screenshot of UIView in UIImage)
 extension UIImage {
+    // let image = UIImage(view: canvasView)
     convenience init(view: UIView) {
         UIGraphicsBeginImageContext(view.frame.size)
         view.layer.render(in:UIGraphicsGetCurrentContext()!)
@@ -97,7 +101,7 @@ extension UIView {
             self.layer.cornerRadius = radius
             self.layer.masksToBounds = true
             self.clipsToBounds = true
-
+            
             var corners = CACornerMask()
             if topLeft {
                 corners.insert(.layerMinXMinYCorner)
@@ -140,16 +144,18 @@ enum Views: String {
     /// let newView = Views.view1.getView() ---- USES
     case view1 = "NewView" // Change View1 to be the name of your nib
     case view2 = "View2" // Change View2 to be the name of another nib
-
+    
     func getView() -> UIView? {
         return Bundle.main.loadNibNamed(self.rawValue, owner: nil, options: nil)?.first as? UIView
     }
 }
 
 extension UIView {
-    /// UIView replaces with = RegisterPageView
-    /// let newView = RegisterPageView.instanceFromNib()
-    /// load custom Xib File
+    /*
+     UIView replaces with = RegisterPageView
+     let newView = RegisterPageView.instanceFromNib()
+     */
+    
     class func instanceFromNib() -> UIView {
         return UINib(nibName: "RegisterPageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
@@ -174,9 +180,12 @@ extension UIColor {
 }
 
 extension UIColor {
-//    let myColor = UIColor(hexFromString: "4F9BF5")
-//    let myColor1 = UIColor(hexFromString: "#4F9BF5")
-//    let myColor2 = UIColor(hexFromString: "#4F9BF5", alpha: 0.5)
+    /*
+     let myColor = UIColor(hexFromString: "4F9BF5")
+     let myColor1 = UIColor(hexFromString: "#4F9BF5")
+     let myColor2 = UIColor(hexFromString: "#4F9BF5", alpha: 0.5)
+     */
+    
     convenience init(hexFromString:String, alpha:CGFloat = 1.0) {
         var cString:String = hexFromString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         var rgbValue:UInt64 = 10066329
@@ -366,7 +375,7 @@ extension UIViewController {
     struct Loader {
         static var loaderViewBG: UIView?
     }
-   ///   self.showLoader()
+    ///   self.showLoader()
     func showLoader() {
         if let window = UIWindow.appWindow() {
             let view = UIView(frame: window.bounds)
@@ -573,21 +582,47 @@ extension UIApplication {
 extension UIWindow {
     static var key: UIWindow? {
         if #available(iOS 13, *) {
-        return UIApplication.shared.windows.first { $0.isKeyWindow }
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
         } else {
-        return UIApplication.shared.keyWindow
+            return UIApplication.shared.keyWindow
         }
     }
 }
 
+extension NSMutableAttributedString {
+    func setUnderLineForText(textForAttribute: String, withColor color: UIColor, withFontName fontName: String, fontSize:Int) {
+        let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
+        self.addAttribute(NSAttributedString.Key.font, value: UIFont(name: fontName, size: CGFloat(fontSize)) ?? "", range: range)
+        self.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+    }
+    
+    func setSimpleForText(textForAttribute: String, withColor color: UIColor, fontName: String, fontSize:Int){
+        let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
+        self.addAttribute(NSAttributedString.Key.font, value: UIFont(name: fontName, size: CGFloat(fontSize))!, range: range)
+    }
+    
+    /*
+     let stringValue = "By continuing,you agree to our\nTerms & Conditions and Privacy Policy."
+     let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: stringValue)
+     attributedString.setSimpleForText(textForAttribute: stringValue, withColor: .red, fontName: "Poppins-SemiBold", fontSize: 18)
+     attributedString.setUnderLineForText(textForAttribute: "Terms & Conditions", withColor: #colorLiteral(red: 0.3882352941, green: 0.3882352941, blue: 0.4, alpha: 1), withFontName: "Poppins-SemiBold", fontSize: 12)
+     attributedString.setUnderLineForText(textForAttribute: "Privacy Policy", withColor: #colorLiteral(red: 0.3882352941, green: 0.3882352941, blue: 0.4, alpha: 1), withFontName: "Poppins-SemiBold", fontSize: 12)
+     termLabel.attributedText = attributedString //termLabel is Label Outlet....
+     */
+}
 
 extension CALayer {
-    /// let caBasisAnimation = CABasicAnimation(keyPath: CALayer.CALayerAnimations_Kyes.rotation)
-   /// caBasisAnimation.fromValue = 0
-   /// caBasisAnimation.toValue = 100
-   /// caBasisAnimation.repeatCount = .infinity
-   ///caBasisAnimation.duration = 50
-    /// self.contentView.layer.add(caBasisAnimation, forKey: nil)
+    /*
+     let caBasisAnimation = CABasicAnimation(keyPath: CALayer.CALayerAnimations_Kyes.rotation)
+     caBasisAnimation.fromValue = 0
+     caBasisAnimation.toValue = 100
+     caBasisAnimation.repeatCount = .infinity
+     caBasisAnimation.duration = 50
+     self.contentView.layer.add(caBasisAnimation, forKey: nil)
+     */
+    
     struct CALayerAnimations_Kyes {
         static let transform      = "transform"
         static let translation    = "transform.translation"
@@ -609,13 +644,15 @@ extension CALayer {
 // #-#-#-#-#-#-#-#-#-#-#-#-#
 
 public extension UIDevice {
-    /// let deviceType = UIDevice().type
-//    switch deviceType {
-//    case .iPhoneX:
-//        print("HI")
-//    default:
-//        break
-//    }
+    /*
+     let deviceType = UIDevice().type
+     switch deviceType {
+     case .iPhoneX:
+     print("HI")
+     default:
+     break
+     }
+     */
     
     var type: Model {
         var systemInfo = utsname()
@@ -625,12 +662,12 @@ public extension UIDevice {
                 ptr in String.init(validatingUTF8: ptr)
             }
         }
-
+        
         let modelMap : [String: Model] = [
             //Simulator
             "i386"      : .simulator,
             "x86_64"    : .simulator,
-
+            
             //iPod
             "iPod1,1"   : .iPod1,
             "iPod2,1"   : .iPod2,
@@ -639,7 +676,7 @@ public extension UIDevice {
             "iPod5,1"   : .iPod5,
             "iPod7,1"   : .iPod6,
             "iPod9,1"   : .iPod7,
-
+            
             //iPad
             "iPad2,1"   : .iPad2,
             "iPad2,2"   : .iPad2,
@@ -659,7 +696,7 @@ public extension UIDevice {
             "iPad7,12"  : .iPad7,
             "iPad11,6"  : .iPad8, //iPad 2020
             "iPad11,7"  : .iPad8,
-
+            
             //iPad Mini
             "iPad2,5"   : .iPadMini,
             "iPad2,6"   : .iPadMini,
@@ -674,7 +711,7 @@ public extension UIDevice {
             "iPad5,2"   : .iPadMini4,
             "iPad11,1"  : .iPadMini5,
             "iPad11,2"  : .iPadMini5,
-
+            
             //iPad Pro
             "iPad6,3"   : .iPadPro9_7,
             "iPad6,4"   : .iPadPro9_7,
@@ -696,7 +733,7 @@ public extension UIDevice {
             "iPad8,8"   : .iPadPro3_12_9,
             "iPad8,11"  : .iPadPro4_12_9,
             "iPad8,12"  : .iPadPro4_12_9,
-
+            
             //iPad Air
             "iPad4,1"   : .iPadAir,
             "iPad4,2"   : .iPadAir,
@@ -707,8 +744,8 @@ public extension UIDevice {
             "iPad11,4"  : .iPadAir3,
             "iPad13,1"  : .iPadAir4,
             "iPad13,2"  : .iPadAir4,
-
-
+            
+            
             //iPhone
             "iPhone3,1" : .iPhone4,
             "iPhone3,2" : .iPhone4,
@@ -747,7 +784,7 @@ public extension UIDevice {
             "iPhone13,2" : .iPhone12,
             "iPhone13,3" : .iPhone12Pro,
             "iPhone13,4" : .iPhone12ProMax,
-
+            
             // Apple Watch
             "Watch1,1" : .AppleWatch1,
             "Watch1,2" : .AppleWatch1,
@@ -775,7 +812,7 @@ public extension UIDevice {
             "Watch6,2" : .AppleWatchS6,
             "Watch6,3" : .AppleWatchS6,
             "Watch6,4" : .AppleWatchS6,
-
+            
             //Apple TV
             "AppleTV1,1" : .AppleTV1,
             "AppleTV2,1" : .AppleTV2,
@@ -784,7 +821,7 @@ public extension UIDevice {
             "AppleTV5,3" : .AppleTV4,
             "AppleTV6,2" : .AppleTV_4K
         ]
-
+        
         if let model = modelMap[String.init(validatingUTF8: modelCode!)!] {
             if model == .simulator {
                 if let simModelCode = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] {
