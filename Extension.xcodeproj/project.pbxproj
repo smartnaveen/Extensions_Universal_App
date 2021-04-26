@@ -18,6 +18,7 @@
 		E759292B25FA6BE500363F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E759292A25FA6BE500363F6B /* Assets.xcassets */; };
 		E759292E25FA6BE500363F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */; };
 		E759293725FA6BFF00363F6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759293625FA6BFF00363F6B /* Extensions.swift */; };
+		E76114042636D1E80059F3AE /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76114032636D1E80059F3AE /* DispatchQueue+Extensions.swift */; };
 		E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766A3652601A77200FD0961 /* Extension_Enum.swift */; };
 		E774BFAB261F59C60045907A /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = E774BFAA261F59C60045907A /* Colors.plist */; };
 		E774BFAE2620AFCA0045907A /* appDsysms.png in Resources */ = {isa = PBXBuildFile; fileRef = E774BFAD2620AFCA0045907A /* appDsysms.png */; };
@@ -43,6 +44,7 @@
 		E759292D25FA6BE500363F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E759292F25FA6BE500363F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E759293625FA6BFF00363F6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E76114032636D1E80059F3AE /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		E766A3652601A77200FD0961 /* Extension_Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Enum.swift; sourceTree = "<group>"; };
 		E774BFAA261F59C60045907A /* Colors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
 		E774BFAD2620AFCA0045907A /* appDsysms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appDsysms.png; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				E7802B66260E280B00F7C44C /* APIManager.swift */,
 				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E738A53D262CC33000A76112 /* DesignableUITextField.swift */,
+				E76114032636D1E80059F3AE /* DispatchQueue+Extensions.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -328,6 +331,7 @@
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
 				E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
+				E76114042636D1E80059F3AE /* DispatchQueue+Extensions.swift in Sources */,
 				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,
 				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
 				E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */,
