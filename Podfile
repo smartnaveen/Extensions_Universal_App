@@ -7,6 +7,8 @@ target 'Extension' do
 pod 'ReachabilitySwift'
 pod 'Alamofire', '~> 5.2'
 pod 'SVProgressHUD'
+pod 'SDWebImage', '~> 5.0'
+pod 'IQKeyboardManagerSwift'
 
 
 end
