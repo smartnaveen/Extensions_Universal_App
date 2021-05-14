@@ -21,7 +21,14 @@ class APIManager: NSObject {
     func fetchData(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (Any) -> (), failure: @escaping(String)->()){
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(url)
-        AF.request(url, method: requestType, parameters: dict, encoding: URLEncoding.default , headers: nil).responseJSON { (response: AFDataResponse<Any>) in
+          let token = AppManager.getAuthenticationToken()
+        let headers: HTTPHeaders = [
+                  /* "Authorization": "your_access_token",  in case you need authorization header */
+//                  "Content-type": "multipart/form-data",
+//            "Content-type": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ5YWY1ODliMzM3NWE5MTNlZTBjOGQiLCJmaXJzdG5hbWUiOiJQYW5rYWoiLCJsYXN0bmFtZSI6Ikt1bWFyIiwiZW1haWwiOiJzZnMucGFua2FqMjBAZ21haWwuY29tIiwiZ2VuZGVyIjoibWFsZSIsImRvYiI6IjE5OTUtMTItMTZUMDA6MDA6MDAuMDAwWiIsImNvdW50cnlfY29kZSI6Iis5MSIsInBob25lX251bWJlciI6Ijg3MDA1MzkzNjYiLCJwcm9maWxlIjoiIiwidXNlcl90eXBlIjoibWVuIiwiZGVmYXVsdF9wcm9maWxlIjp0cnVlLCJhZGRyZXNzX2lkIjoiIiwiaWF0IjoxNjE0NTkxNjEzLCJhdWQiOiJTcVRvc2RzZEtlTnBSb0plQ3QifQ.Ao8EGV6WTnsXSAot9Ng9ei4Uj2NoBhHStEQFhmFI89Y",
+              ]
+        AF.request(url, method: requestType, parameters: dict, encoding: URLEncoding.default , headers: headers).responseJSON { (response: AFDataResponse<Any>) in
             ///JSONEncoding.default
             print("response.debugDescription===",response.debugDescription)
             print("Response =====  ",response.result)
@@ -42,7 +49,14 @@ class APIManager: NSObject {
     func fetchGenericData<T:Decodable>(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (T) -> (), failure: @escaping(String)->()){
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(url)
-        AF.request(url, method: requestType, parameters: dict, encoding: URLEncoding.default , headers: [:]).responseJSON { (response:AFDataResponse<Any>) in
+          let token = AppManager.getAuthenticationToken()
+        let headers: HTTPHeaders = [
+                  /* "Authorization": "your_access_token",  in case you need authorization header */
+//                  "Content-type": "multipart/form-data",
+//            "Content-type": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ5YWY1ODliMzM3NWE5MTNlZTBjOGQiLCJmaXJzdG5hbWUiOiJQYW5rYWoiLCJsYXN0bmFtZSI6Ikt1bWFyIiwiZW1haWwiOiJzZnMucGFua2FqMjBAZ21haWwuY29tIiwiZ2VuZGVyIjoibWFsZSIsImRvYiI6IjE5OTUtMTItMTZUMDA6MDA6MDAuMDAwWiIsImNvdW50cnlfY29kZSI6Iis5MSIsInBob25lX251bWJlciI6Ijg3MDA1MzkzNjYiLCJwcm9maWxlIjoiIiwidXNlcl90eXBlIjoibWVuIiwiZGVmYXVsdF9wcm9maWxlIjp0cnVlLCJhZGRyZXNzX2lkIjoiIiwiaWF0IjoxNjE0NTkxNjEzLCJhdWQiOiJTcVRvc2RzZEtlTnBSb0plQ3QifQ.Ao8EGV6WTnsXSAot9Ng9ei4Uj2NoBhHStEQFhmFI89Y",
+              ]
+        AF.request(url, method: requestType, parameters: dict, encoding: URLEncoding.default , headers: headers).responseJSON { (response:AFDataResponse<Any>) in
             print(response.debugDescription)
             print("Response =====  ",response.result)
             switch(response.result){
