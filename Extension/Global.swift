@@ -17,6 +17,10 @@ class Global: NSObject {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.setTint(color: UIColor.init(named: "AppBlueColor") ?? UIColor.blue)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+            print("Dismiss")
+        }))
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
