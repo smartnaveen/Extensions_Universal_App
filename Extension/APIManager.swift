@@ -215,6 +215,7 @@ class APIManager: NSObject {
  
  
  --------------------------  FETCHDATA NOT GENERIC  --------------------------
+//Another Way - 1
  let safeUrl = "https://reqres.in/api/register"
  let param = ["email": "eve.holt@reqres.in", "password": "pistol"]
  APIManager.shared.fetchData(urlString: safeUrl, dict: param, requestType: .post) { (result) in
@@ -226,6 +227,26 @@ class APIManager: NSObject {
      Global.shared.showAlert(title: error, message: "")
  }
  
+//Another Way - 2
+   let parameter = ["user_id": "5fd9af589b3375a913ee0c8d", "preference": ["men", "women"]] as [String : Any]
+
+        APIManager.shared.fetchData(urlString: APIConstant.setPreference(), dict: parameter, requestType: .post) { (result) in
+            if let safeResult = result as? [String: Any] {
+                if let statusCode = safeResult["status"] as? Int, let message = safeResult["message"] as? String {
+                    if statusCode == 401 {
+                        Global.shared.showAlert(title: GConstant.kAlertTitle, message: message)
+                    }else {
+                        if statusCode == 200 {
+                            Global.shared.showAlert(title: GConstant.kAlertTitle, message: message)
+                        }
+                    }
+                }
+            }
+        } failure: { (error) in
+            debugPrint(error)
+            Global.shared.showAlert(title: GConstant.kAlertTitle, message: error)
+        }
+
  */
 
 
