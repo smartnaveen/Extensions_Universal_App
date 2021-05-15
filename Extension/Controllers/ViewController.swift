@@ -10,32 +10,42 @@ import Alamofire
 
 class ViewController: UIViewController {
     
+// pull refresh
+// shimmer
+    // touchesBegan
+    
+    
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(105, 60, 114)
-      //  userNameTextFiled.enablePasswordToggle()
-       
-        
-
+        //  userNameTextFiled.enablePasswordToggle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if NetworkReachability.shared.isNetworkAvailable  {
-            print("Net is avilable")
-       
-            
+            print("Net is availabler")
         }else {
             print("no internet")
         }
     }
     
+
+    @IBAction func clickMe(_ sender: UIButton) {
+    }
     
-   
     
 }
 
-
+extension UIView {
+    func subviews<T:UIView>(ofType WhatType:T.Type) -> [T] {
+        var result = self.subviews.compactMap {$0 as? T}
+        for sub in self.subviews {
+            result.append(contentsOf: sub.subviews(ofType:WhatType))
+        }
+        return result
+    }
+}
 
 
 extension UITextField {
@@ -58,7 +68,7 @@ extension UITextField {
         self.rightViewMode = .always
     }
     
-   @objc func togglePasswordView(_ sender: Any) {
+    @objc func togglePasswordView(_ sender: Any) {
         self.isSecureTextEntry = !self.isSecureTextEntry
         setPasswordToggleImage(sender as! UIButton)
     }

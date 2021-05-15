@@ -16,29 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="w9J-uc-Gf3">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI6-hg-okq">
-                                <rect key="frame" x="184" y="618" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tp2-oD-EfB">
+                                <rect key="frame" x="20" y="802" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.46274509800000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="clickMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1a2-vU-Aqq"/>
+                                    <action selector="clickMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nZb-JA-wTN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vI6-hg-okq" firstAttribute="centerX" secondItem="w9J-uc-Gf3" secondAttribute="centerX" id="DIx-Fg-M6K"/>
-                            <constraint firstItem="w9J-uc-Gf3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMU-Wj-hqz"/>
-                            <constraint firstItem="vI6-hg-okq" firstAttribute="top" secondItem="w9J-uc-Gf3" secondAttribute="bottom" constant="151.5" id="WLo-Pe-ABc"/>
-                            <constraint firstItem="w9J-uc-Gf3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iYl-eV-Mng"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tp2-oD-EfB" secondAttribute="bottom" constant="30" id="0tI-Fn-XXE"/>
+                            <constraint firstItem="tp2-oD-EfB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EmN-nF-4GM"/>
+                            <constraint firstItem="tp2-oD-EfB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ObN-1e-69F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tp2-oD-EfB" secondAttribute="trailing" constant="20" id="W2o-03-GTv"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="activityIndicator" destination="w9J-uc-Gf3" id="aNB-2q-ghG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

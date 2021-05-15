@@ -25,11 +25,6 @@ import UIKit
         }
     }
     
-    @IBInspectable var shadowColor: UIColor = .clear {
-        didSet {
-            setNeedsLayout()
-        }
-    }
     
     @IBInspectable var shadowX: CGFloat = 0 {
         didSet {
@@ -73,12 +68,6 @@ import UIKit
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-    
     @IBInspectable var topLeftCorner: Bool = false {
         didSet {
             setNeedsLayout()
@@ -114,7 +103,7 @@ import UIKit
         } else {
             self.roundedCorner(with: cornerRadius, topLeft: self.topLeftCorner, topRight: self.topRightCorner, bottomLeft: self.bottomLeftCorner, bottomRight: self.bottomRightCorner)
         }
-        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowColor = shadowColor?.cgColor
         self.layer.shadowOffset = CGSize(width: shadowX, height: shadowY)
         self.layer.shadowRadius = shadowBlur
         self.layer.shadowOpacity = 1

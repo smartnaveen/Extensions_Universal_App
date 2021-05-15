@@ -1,24 +1,38 @@
 PODS:
   - Alamofire (5.4.1)
+  - IQKeyboardManagerSwift (6.5.6)
+  - ProgressHUD (13.6)
   - ReachabilitySwift (5.0.0)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - IQKeyboardManagerSwift
+  - ProgressHUD
   - ReachabilitySwift
+  - SDWebImage (~> 5.0)
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManagerSwift
+    - ProgressHUD
     - ReachabilitySwift
+    - SDWebImage
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: a0211905c69d3784e4e937128ed181fd156bd32b
+PODFILE CHECKSUM: edf028c24ad24de03ee36cf9077a5180e148bd9e
 
 COCOAPODS: 1.10.0

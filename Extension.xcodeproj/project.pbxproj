@@ -26,7 +26,6 @@
 		E774BFB326217BE00045907A /* imgurK.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774BFB226217BE00045907A /* imgurK.swift */; };
 		E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B37260A644100F7C44C /* NetworkReachability.swift */; };
 		E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */; };
-		E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B43260BB22300F7C44C /* GradientButton.swift */; };
 		E7802B67260E280B00F7C44C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B66260E280B00F7C44C /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		E774BFB226217BE00045907A /* imgurK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgurK.swift; sourceTree = "<group>"; };
 		E7802B37260A644100F7C44C /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerOld.swift; sourceTree = "<group>"; };
-		E7802B43260BB22300F7C44C /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		E7802B66260E280B00F7C44C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E783D7B6262B4CED0028C3E0 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		E783D7B7262B4CED0028C3E0 /* naveenPhotos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naveenPhotos.jpg; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				E759293625FA6BFF00363F6B /* Extensions.swift */,
 				E766A3652601A77200FD0961 /* Extension_Enum.swift */,
 				E71B26C125FE9D23001AA5BB /* GradientView.swift */,
-				E7802B43260BB22300F7C44C /* GradientButton.swift */,
 				E7802B66260E280B00F7C44C /* APIManager.swift */,
 				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E738A53D262CC33000A76112 /* DesignableUITextField.swift */,
@@ -332,7 +329,6 @@
 				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
-				E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
 				E76114042636D1E80059F3AE /* DispatchQueue+Extensions.swift in Sources */,
 				E74C47C4264F9FF900B571B5 /* UIActivityIndicatorView.swift in Sources */,

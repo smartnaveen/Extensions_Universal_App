@@ -9,6 +9,7 @@ pod 'Alamofire', '~> 5.2'
 pod 'SVProgressHUD'
 pod 'SDWebImage', '~> 5.0'
 pod 'IQKeyboardManagerSwift'
+pod 'ProgressHUD'
 
 
 end

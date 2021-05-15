@@ -864,3 +864,134 @@ public extension UIDevice {
         return Model.unrecognized
     }
 }
+
+
+// MARK:- Extension For CUSTOM Of VIEW
+extension UIView {
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderColor: UIColor? {
+        get {
+            if let color = layer.borderColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.borderColor = color.cgColor
+            } else {
+                layer.borderColor = nil
+            }
+        }
+    }
+    
+    @IBInspectable
+    var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
+        }
+    }
+    
+    @IBInspectable
+    var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
+        }
+    }
+    
+    @IBInspectable
+    var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set {
+            layer.shadowOffset = newValue
+        }
+    }
+    
+    @IBInspectable
+    var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+        }
+    }
+}
+
+
+ // MARK:- Letter spacing for Label
+extension UILabel {
+    @IBInspectable
+    var letterSpace: CGFloat {
+        set {
+            let attributedString: NSMutableAttributedString!
+            if let currentAttrString = attributedText {
+                attributedString = NSMutableAttributedString(attributedString: currentAttrString)
+            } else {
+                attributedString = NSMutableAttributedString(string: text ?? "")
+                text = nil
+            }
+            attributedString.addAttribute(NSAttributedString.Key.kern,
+                                          value: newValue,
+                                          range: NSRange(location: 0, length: attributedString.length))
+            attributedText = attributedString
+        }
+
+        get {
+            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat {
+                return currentLetterSpace
+            } else {
+                return 0
+            }
+        }
+    }
+}
+
+
+ // MARK:- Set Corner-Radius to UIView
+extension UIView {
+    /*
+     theView.roundCorners(corners: [.topLeft, .topRight], radius: 3.0)
+     */
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
