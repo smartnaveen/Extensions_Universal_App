@@ -11,13 +11,12 @@ import Alamofire
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var userNameTextFiled: UITextField!
-    
-    
     override func viewDidLoad() {
             super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(105, 60, 114)
-        userNameTextFiled.enablePasswordToggle()
+      //  userNameTextFiled.enablePasswordToggle()
+       
+        
 
     }
     

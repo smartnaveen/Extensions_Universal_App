@@ -10,6 +10,7 @@ import UIKit
 
 class Global: NSObject {
    static let shared = Global()
+    
     let colorSchemeGreen = UIColor.green
     let colorSchemeYellow = UIColor.yellow
     let primarycolorScheme = UIColor.blue
@@ -17,7 +18,7 @@ class Global: NSObject {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.setTint(color: UIColor.init(named: "AppBlueColor") ?? UIColor.blue)
+        alert.view.tintColor = UIColor.init(named: "AppOrangeColor") ?? UIColor.green
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
             print("Dismiss")
         }))
