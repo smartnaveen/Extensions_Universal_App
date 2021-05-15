@@ -11,6 +11,7 @@
 		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
 		E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738A53D262CC33000A76112 /* DesignableUITextField.swift */; };
 		E74B9BA22605018F00D68644 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B9BA12605018F00D68644 /* Global.swift */; };
+		E74C47C4264F9FF900B571B5 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */; };
 		E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292125FA6BE300363F6B /* AppDelegate.swift */; };
 		E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292325FA6BE300363F6B /* SceneDelegate.swift */; };
 		E759292625FA6BE300363F6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292525FA6BE300363F6B /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E738A53D262CC33000A76112 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		E74B9BA12605018F00D68644 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
 		E759291E25FA6BE300363F6B /* Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E759292125FA6BE300363F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E759292325FA6BE300363F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E738A53D262CC33000A76112 /* DesignableUITextField.swift */,
 				E76114032636D1E80059F3AE /* DispatchQueue+Extensions.swift */,
+				E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -332,6 +335,7 @@
 				E7802B44260BB22300F7C44C /* GradientButton.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
 				E76114042636D1E80059F3AE /* DispatchQueue+Extensions.swift in Sources */,
+				E74C47C4264F9FF900B571B5 /* UIActivityIndicatorView.swift in Sources */,
 				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,
 				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
 				E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */,

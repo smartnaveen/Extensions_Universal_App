@@ -10,7 +10,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    
     override func viewDidLoad() {
             super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(105, 60, 114)
@@ -24,11 +23,18 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
         if NetworkReachability.shared.isNetworkAvailable  {
             print("Net is avilable")
+       
+            
         }else {
             print("no internet")
         }
     }
+    
+    
+   
+    
 }
+
 
 
 
