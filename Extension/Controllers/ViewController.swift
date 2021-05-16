@@ -10,7 +10,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-// pull refresh
 // shimmer
     // touchesBegan
     
