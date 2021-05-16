@@ -7,6 +7,7 @@ PODS:
     - SDWebImage/Core (= 5.10.0)
   - SDWebImage/Core (5.10.0)
   - SVProgressHUD (2.2.5)
+  - UIView-Shimmer (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - ReachabilitySwift
   - SDWebImage (~> 5.0)
   - SVProgressHUD
+  - UIView-Shimmer (~> 1.0)
 
 SPEC REPOS:
   trunk:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - ReachabilitySwift
     - SDWebImage
     - SVProgressHUD
+    - UIView-Shimmer
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -32,7 +35,8 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UIView-Shimmer: ff0a32c73d67c7dbdea3d9e530538b10d18aea56
 
-PODFILE CHECKSUM: edf028c24ad24de03ee36cf9077a5180e148bd9e
+PODFILE CHECKSUM: 8631b861bb9e318074b134e3e46e83b142868494
 
 COCOAPODS: 1.10.0

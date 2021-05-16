@@ -13,6 +13,7 @@
 		E74B9BA22605018F00D68644 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B9BA12605018F00D68644 /* Global.swift */; };
 		E74C47C4264F9FF900B571B5 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */; };
 		E74C47DA2650F82600B571B5 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C47D92650F82600B571B5 /* PullToRefresh.swift */; };
+		E74C47EA26516FAC00B571B5 /* UIView-Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C47E926516FAC00B571B5 /* UIView-Shimmer.swift */; };
 		E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292125FA6BE300363F6B /* AppDelegate.swift */; };
 		E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292325FA6BE300363F6B /* SceneDelegate.swift */; };
 		E759292625FA6BE300363F6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759292525FA6BE300363F6B /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		E74B9BA12605018F00D68644 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
 		E74C47D92650F82600B571B5 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		E74C47E926516FAC00B571B5 /* UIView-Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Shimmer.swift"; sourceTree = "<group>"; };
 		E759291E25FA6BE300363F6B /* Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E759292125FA6BE300363F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E759292325FA6BE300363F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E76114032636D1E80059F3AE /* DispatchQueue+Extensions.swift */,
 				E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */,
 				E74C47D92650F82600B571B5 /* PullToRefresh.swift */,
+				E74C47E926516FAC00B571B5 /* UIView-Shimmer.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -333,6 +336,7 @@
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
+				E74C47EA26516FAC00B571B5 /* UIView-Shimmer.swift in Sources */,
 				E76114042636D1E80059F3AE /* DispatchQueue+Extensions.swift in Sources */,
 				E74C47C4264F9FF900B571B5 /* UIActivityIndicatorView.swift in Sources */,
 				E759293725FA6BFF00363F6B /* Extensions.swift in Sources */,

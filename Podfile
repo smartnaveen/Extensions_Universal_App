@@ -11,5 +11,6 @@ pod 'SDWebImage', '~> 5.0'
 pod 'IQKeyboardManagerSwift'
 pod 'ProgressHUD'
 
+pod 'UIView-Shimmer', '~> 1.0'
 
 end
