@@ -29,6 +29,7 @@
 		E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B37260A644100F7C44C /* NetworkReachability.swift */; };
 		E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */; };
 		E7802B67260E280B00F7C44C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B66260E280B00F7C44C /* APIManager.swift */; };
+		E7DDA9682659756A00CD0496 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDA9672659756A00CD0496 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		E7802B66260E280B00F7C44C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E783D7B6262B4CED0028C3E0 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		E783D7B7262B4CED0028C3E0 /* naveenPhotos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naveenPhotos.jpg; sourceTree = "<group>"; };
+		E7DDA9672659756A00CD0496 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		E9F6DFD903AA6AD0C3B22D7F /* Pods-Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.debug.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */,
 				E74C47D92650F82600B571B5 /* PullToRefresh.swift */,
 				E74C47E926516FAC00B571B5 /* UIView-Shimmer.swift */,
+				E7DDA9672659756A00CD0496 /* ActivityViewController.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -332,6 +335,7 @@
 				E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */,
 				E774BFB326217BE00045907A /* imgurK.swift in Sources */,
 				E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */,
+				E7DDA9682659756A00CD0496 /* ActivityViewController.swift in Sources */,
 				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
