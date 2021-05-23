@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DC09C42C32B7030B69201634 /* Pods_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */; };
 		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
+		E72ABF74265A18B5008CE6A7 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF71265A18B5008CE6A7 /* APIConstant.swift */; };
+		E72ABF75265A18B5008CE6A7 /* GConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF72265A18B5008CE6A7 /* GConstant.swift */; };
+		E72ABF76265A18B5008CE6A7 /* GFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF73265A18B5008CE6A7 /* GFunction.swift */; };
 		E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738A53D262CC33000A76112 /* DesignableUITextField.swift */; };
 		E74B9BA22605018F00D68644 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B9BA12605018F00D68644 /* Global.swift */; };
 		E74C47C4264F9FF900B571B5 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */; };
@@ -36,6 +39,9 @@
 		362C0C96959DB0EFD51E0628 /* Pods-Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.release.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E72ABF71265A18B5008CE6A7 /* APIConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
+		E72ABF72265A18B5008CE6A7 /* GConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GConstant.swift; sourceTree = "<group>"; };
+		E72ABF73265A18B5008CE6A7 /* GFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFunction.swift; sourceTree = "<group>"; };
 		E738A53D262CC33000A76112 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		E74B9BA12605018F00D68644 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		E74C47C3264F9FF900B571B5 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 				E74C47D92650F82600B571B5 /* PullToRefresh.swift */,
 				E74C47E926516FAC00B571B5 /* UIView-Shimmer.swift */,
 				E7DDA9672659756A00CD0496 /* ActivityViewController.swift */,
+				E72ABF71265A18B5008CE6A7 /* APIConstant.swift */,
+				E72ABF72265A18B5008CE6A7 /* GConstant.swift */,
+				E72ABF73265A18B5008CE6A7 /* GFunction.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -333,10 +342,12 @@
 			files = (
 				E759292625FA6BE300363F6B /* ViewController.swift in Sources */,
 				E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */,
+				E72ABF74265A18B5008CE6A7 /* APIConstant.swift in Sources */,
 				E774BFB326217BE00045907A /* imgurK.swift in Sources */,
 				E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */,
 				E7DDA9682659756A00CD0496 /* ActivityViewController.swift in Sources */,
 				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
+				E72ABF76265A18B5008CE6A7 /* GFunction.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
 				E766A3662601A77200FD0961 /* Extension_Enum.swift in Sources */,
@@ -348,6 +359,7 @@
 				E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */,
 				E74C47DA2650F82600B571B5 /* PullToRefresh.swift in Sources */,
 				E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */,
+				E72ABF75265A18B5008CE6A7 /* GConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
