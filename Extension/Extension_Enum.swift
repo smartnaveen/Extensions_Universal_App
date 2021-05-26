@@ -99,15 +99,6 @@ AppleTV_4K         = "Apple TV 4K",
 unrecognized       = "?unrecognized?"
 }
 
-
-enum ViewCornerType {
-    case allTop
-    case allBottom
-    case allLeft
-    case allRight
-    
-}
-
 enum ToastSeverityType {
     case incorrect
     case warning

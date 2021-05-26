@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC09C42C32B7030B69201634 /* Pods_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */; };
-		E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B26C125FE9D23001AA5BB /* GradientView.swift */; };
 		E72ABF74265A18B5008CE6A7 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF71265A18B5008CE6A7 /* APIConstant.swift */; };
 		E72ABF75265A18B5008CE6A7 /* GConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF72265A18B5008CE6A7 /* GConstant.swift */; };
 		E72ABF76265A18B5008CE6A7 /* GFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF73265A18B5008CE6A7 /* GFunction.swift */; };
@@ -29,6 +28,7 @@
 		E774BFAB261F59C60045907A /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = E774BFAA261F59C60045907A /* Colors.plist */; };
 		E774BFAE2620AFCA0045907A /* appDsysms.png in Resources */ = {isa = PBXBuildFile; fileRef = E774BFAD2620AFCA0045907A /* appDsysms.png */; };
 		E774BFB326217BE00045907A /* imgurK.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774BFB226217BE00045907A /* imgurK.swift */; };
+		E7793D5A265C1C4D00427CD4 /* CollectionViewReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7793D59265C1C4D00427CD4 /* CollectionViewReusableView.swift */; };
 		E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B37260A644100F7C44C /* NetworkReachability.swift */; };
 		E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */; };
 		E7802B67260E280B00F7C44C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7802B66260E280B00F7C44C /* APIManager.swift */; };
@@ -38,7 +38,6 @@
 /* Begin PBXFileReference section */
 		362C0C96959DB0EFD51E0628 /* Pods-Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Extension.release.xcconfig"; path = "Target Support Files/Pods-Extension/Pods-Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71B26C125FE9D23001AA5BB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E72ABF71265A18B5008CE6A7 /* APIConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		E72ABF72265A18B5008CE6A7 /* GConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GConstant.swift; sourceTree = "<group>"; };
 		E72ABF73265A18B5008CE6A7 /* GFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFunction.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		E774BFAA261F59C60045907A /* Colors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
 		E774BFAD2620AFCA0045907A /* appDsysms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appDsysms.png; sourceTree = "<group>"; };
 		E774BFB226217BE00045907A /* imgurK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgurK.swift; sourceTree = "<group>"; };
+		E7793D59265C1C4D00427CD4 /* CollectionViewReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewReusableView.swift; sourceTree = "<group>"; };
 		E7802B37260A644100F7C44C /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		E7802B3B260BA5E200F7C44C /* APIManagerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerOld.swift; sourceTree = "<group>"; };
 		E7802B66260E280B00F7C44C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 				E74B9BA12605018F00D68644 /* Global.swift */,
 				E759293625FA6BFF00363F6B /* Extensions.swift */,
 				E766A3652601A77200FD0961 /* Extension_Enum.swift */,
-				E71B26C125FE9D23001AA5BB /* GradientView.swift */,
 				E7802B66260E280B00F7C44C /* APIManager.swift */,
 				E7802B37260A644100F7C44C /* NetworkReachability.swift */,
 				E738A53D262CC33000A76112 /* DesignableUITextField.swift */,
@@ -133,6 +132,7 @@
 				E72ABF71265A18B5008CE6A7 /* APIConstant.swift */,
 				E72ABF72265A18B5008CE6A7 /* GConstant.swift */,
 				E72ABF73265A18B5008CE6A7 /* GFunction.swift */,
+				E7793D59265C1C4D00427CD4 /* CollectionViewReusableView.swift */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
 			);
@@ -344,9 +344,9 @@
 				E7802B3C260BA5E200F7C44C /* APIManagerOld.swift in Sources */,
 				E72ABF74265A18B5008CE6A7 /* APIConstant.swift in Sources */,
 				E774BFB326217BE00045907A /* imgurK.swift in Sources */,
+				E7793D5A265C1C4D00427CD4 /* CollectionViewReusableView.swift in Sources */,
 				E759292225FA6BE300363F6B /* AppDelegate.swift in Sources */,
 				E7DDA9682659756A00CD0496 /* ActivityViewController.swift in Sources */,
-				E71B26C225FE9D23001AA5BB /* GradientView.swift in Sources */,
 				E72ABF76265A18B5008CE6A7 /* GFunction.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,

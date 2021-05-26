@@ -9,44 +9,92 @@ import Foundation
 import UIKit
 import AudioToolbox
 
-let imageCache = NSCache<AnyObject, AnyObject>()
+// MARK:- UserDefaults
+extension UserDefaults {
+   /*
+     UserDefaults.standard.setObjectValue(taylor, forKey: key)
+     taylor object of class/struct
+     key = "save-data"
+     make sure class/struct must be codable protocol adopt
+    print(FileManager.default.urls(for: .preferencePanesDirectory, in: .userDomainMask).first!)  ---> See Saved Data
+    */
+  
+   open func setObjectValue<T: Codable>(_ value: T, forKey key: String) {
+       do {
+           let encoder = JSONEncoder()
+           let data = try encoder.encode(value)
+           UserDefaults.standard.setValue(data, forKey: key)
+       } catch let error {
+           print(error.localizedDescription)
+       }
+   }
+   
+   /*
+    UserDefaults.standard.getObjectValue(ofType: Person.self, forKey: key)
+    person is class/struct
+    key = "save-data"
+    */
+   
+   open func getObjectValue<T: Codable>(ofType type: T.Type, forKey key: String) -> T? {
+       if let data = UserDefaults.standard.data(forKey: key) {
+           do {
+               let decoder = JSONDecoder()
+               let value = try decoder.decode(type, from: data)
+               return value
+           } catch let error {
+               print(error.localizedDescription)
+           }
+       }
+       return nil
+   }
+}
 
+// MARK:- UserDefaults
+extension UserDefaults {
+   /*
+     if let img = UserDefaults.standard.imageForKey(key: key) {
+     appleLogoImageView.image = img
+     }
+    */
+   
+   func imageForKey(key: String) -> UIImage? {
+       var image: UIImage?
+       if let imageData = data(forKey: key) {
+           do {
+               if let loadedStrings = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(imageData) as? UIImage {
+                   image = loadedStrings
+               }
+           } catch {
+               print("Couldn't get Image file.")
+           }
+       }
+       return image
+   }
+   
+   /*
+   UserDefaults.standard.setImage(image: UIImage(named: "naveenPhotos"), forKey: key)
+    */
+   func setImage(image: UIImage?, forKey key: String) {
+       var imageData: NSData?
+       if let image = image {
+           do {
+               imageData = try NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: false) as NSData
+               set(imageData, forKey: key)
+           } catch {
+               print("Couldn't Save Image file.")
+           }
+       }
+   }
+}
+
+
+ // MARK:- UIImageView
 extension UIImageView {
-    
     /// appleLogoImageView.setImageColor(color: .black)
     func setImageColor(color: UIColor) {
         let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
         self.image = templateImage
         self.tintColor = color
-    }
-    
-    /// appleLogoImageView.loadImagesUsingCache(urlString: "", defaultImage: UIImage(systemName: ""))
-    func loadImagesUsingCache(urlString: String, defaultImage: UIImage? = nil) {
-        if let image = defaultImage {
-            self.image = image
-            return
-        }
-        //getting cached images
-        if let cachedImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
-            self.image = cachedImage
-            return
-        }
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            if error != nil {
-                print(error ?? "Downloading Profile Image Failed!")
-                return
-            }
-            DispatchQueue.main.async {
-                if let downloadedImage = UIImage(data: data!) {
-                    imageCache.setObject(downloadedImage, forKey: urlString as AnyObject)
-                    self.image = downloadedImage
-                }
-            }
-        })
-        task.resume()
     }
     
     /// appleLogoImageView.changeImageColor(to: .black)
@@ -59,97 +107,33 @@ extension UIImageView {
     }
 }
 
-
+// MARK:- UIView
+// Set Corner-Radius to UIView
 extension UIView {
-    /// appleLogoImageView.makeCircular(radius: 12)
-    /// make circulat width==height
-    func makeCircular(radius: CGFloat? = nil) {
-        self.clipsToBounds = true
-        self.layer.masksToBounds = true
-        if let radius = radius {
-            self.layer.cornerRadius = radius
-        } else {
-            self.layer.cornerRadius = self.frame.size.width/2
-        }
-    }
-    
-    /// appleLogoImageView.rounded(with: 30, at: [.allTop, .allBottom])
-    func rounded(with radius: CGFloat,at corners: [ViewCornerType]) {
-        roundedCorner(with: radius, topLeft: corners.contains(.allTop) || corners.contains(.allLeft),
-                      topRight: corners.contains(.allTop) || corners.contains(.allRight),
-                      bottomLeft: corners.contains(.allBottom) || corners.contains(.allLeft),
-                      bottomRight: corners.contains(.allBottom) || corners.contains(.allRight))
-    }
-    
-    /// appleLogoImageView.rounded(with: 20, at: [.topLeft, .topRight])
-    func rounded(with radius: CGFloat,at corners: [UIRectCorner]) {
-        roundedCorner(with: radius, topLeft: corners.contains(.topLeft), topRight: corners.contains(.topRight), bottomLeft: corners.contains(.bottomLeft), bottomRight: corners.contains(.bottomRight))
-    }
-    func roundedCorner(with radius: CGFloat, topLeft: Bool = false, topRight: Bool = false, bottomLeft: Bool = false, bottomRight: Bool = false) {
-        if #available(iOS 11.0, *) {
-            self.layer.cornerRadius = radius
-            self.layer.masksToBounds = true
-            self.clipsToBounds = true
-            
-            var corners = CACornerMask()
-            if topLeft {
-                corners.insert(.layerMinXMinYCorner)
-            }
-            if topRight {
-                corners.insert(.layerMaxXMinYCorner)
-            }
-            if bottomLeft {
-                corners.insert(.layerMinXMaxYCorner)
-            }
-            if bottomRight {
-                corners.insert(.layerMaxXMaxYCorner)
-            }
-            self.layer.maskedCorners = corners
-        } else {
-            var corners = UIRectCorner()
-            if topLeft {
-                corners.insert(.topLeft)
-            }
-            if topRight {
-                corners.insert(.topRight)
-            }
-            if bottomLeft {
-                corners.insert(.bottomLeft)
-            }
-            if bottomRight {
-                corners.insert(.bottomRight)
-            }
-            let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-            let maskLayer = CAShapeLayer()
-            maskLayer.frame = self.bounds
-            maskLayer.path = path.cgPath
-            self.layer.mask = maskLayer
-        }
+    /*
+     theView.roundCorners(corners: [.topLeft, .topRight], radius: 3.0)
+     */
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }
 
-enum Views: String {
-    /// load xib file (load custom UIView)
-    /// let newView = Views.view1.getView() ---- USES
-    case view1 = "NewView" // Change View1 to be the name of your nib
-    case view2 = "View2" // Change View2 to be the name of another nib
-    
-    func getView() -> UIView? {
-        return Bundle.main.loadNibNamed(self.rawValue, owner: nil, options: nil)?.first as? UIView
-    }
-}
 
+ // MARK:- UIView
 extension UIView {
     /*
      UIView replaces with = RegisterPageView
      let newView = RegisterPageView.instanceFromNib()
      */
-    
     class func instanceFromNib() -> UIView {
         return UINib(nibName: "RegisterPageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 }
 
+ // MARK:- UIColor
 extension UIColor {
     /// self.view.backgroundColor = UIColor.init(105, 60, 114)
     convenience init(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a: CGFloat = 1) {
@@ -168,6 +152,7 @@ extension UIColor {
     }
 }
 
+ // MARK:- UIColor
 extension UIColor {
     /*
      let myColor = UIColor(hexFromString: "4F9BF5")
@@ -193,83 +178,22 @@ extension UIColor {
     }
 }
 
-extension UserDefaults {
-    /*
-      UserDefaults.standard.setObjectValue(taylor, forKey: key)
-      taylor object of class/struct
-      key = "save-data"
-      make sure class/struct must be codable protocol adopt
-     print(FileManager.default.urls(for: .preferencePanesDirectory, in: .userDomainMask).first!)  ---> See Saved Data
-     */
-   
-    open func setObjectValue<T: Codable>(_ value: T, forKey key: String) {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(value)
-            UserDefaults.standard.setValue(data, forKey: key)
-        } catch let error {
-            print(error.localizedDescription)
-        }
+
+// MARK:- String
+extension String {
+    func isValidEmailAddress() -> Bool {
+        return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
     }
     
-    /*
-     UserDefaults.standard.getObjectValue(ofType: Person.self, forKey: key)
-     person is class/struct
-     key = "save-data"
-     */
-    
-    open func getObjectValue<T: Codable>(ofType type: T.Type, forKey key: String) -> T? {
-        if let data = UserDefaults.standard.data(forKey: key) {
-            do {
-                let decoder = JSONDecoder()
-                let value = try decoder.decode(type, from: data)
-                return value
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
+    func isValidPhone() -> Bool {
+        let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result = phoneTest.evaluate(with: self)
+        return result
     }
 }
 
-extension UserDefaults {
-    /*
-      if let img = UserDefaults.standard.imageForKey(key: key) {
-      appleLogoImageView.image = img
-      }
-     */
-    
-    func imageForKey(key: String) -> UIImage? {
-        var image: UIImage?
-        if let imageData = data(forKey: key) {
-            do {
-                if let loadedStrings = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(imageData) as? UIImage {
-                    image = loadedStrings
-                }
-            } catch {
-                print("Couldn't get Image file.")
-            }
-        }
-        return image
-    }
-    
-    /*
-    UserDefaults.standard.setImage(image: UIImage(named: "naveenPhotos"), forKey: key)
-     */
-    func setImage(image: UIImage?, forKey key: String) {
-        var imageData: NSData?
-        if let image = image {
-            do {
-                imageData = try NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: false) as NSData
-                set(imageData, forKey: key)
-            } catch {
-                print("Couldn't Save Image file.")
-            }
-        }
-    }
-}
-
-
+ // MARK:- String
 extension String {
     /// let str1 = "  a b c d e   \n"
     /// let str2 = str1.trimmed
@@ -281,6 +205,7 @@ extension String {
     }
 }
 
+ // MARK:- String
 // -----------------------String.toDate(…) and Date.toString(…) --------
 extension String {
     /*
@@ -296,6 +221,7 @@ extension String {
     }
 }
 
+ // MARK:- Data
 extension Date {
     func toString(format: String) -> String {
         let df = DateFormatter()
@@ -305,21 +231,7 @@ extension Date {
 }
 // ---------------End
 
-
-extension String {
-    func isValidEmailAddress() -> Bool {
-        return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
-    }
-    
-    func isValidPhone() -> Bool {
-        let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
-        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        let result = phoneTest.evaluate(with: self)
-        return result
-    }
-}
-
-//-----------ViewController extension ------------------------
+ // MARK:- UIViewController
 extension UIViewController {
     var isModal: Bool {
         let presentingIsModal = presentingViewController != nil
@@ -535,6 +447,7 @@ extension UIViewController {
     }
 }
 
+ // MARK:- UIWindow
 extension UIWindow {
     class func appWindow() -> UIWindow? {
         if #available(iOS 13.0, *) {
@@ -562,6 +475,7 @@ extension String {
 
 //-----------ViewController extension (end)---------
 
+ // MARK:- UIDevice
 extension UIDevice {
     /*
      import AudioToolbox
@@ -572,6 +486,7 @@ extension UIDevice {
     }
 }
 
+ // MARK:- UIApplication
 extension UIApplication {
     /*
      if let topController = UIApplication.topViewController() {
@@ -580,7 +495,6 @@ extension UIApplication {
      print(topController)
      }
      */
- 
     class func topViewController(controller: UIViewController? = UIWindow.key?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
@@ -597,6 +511,7 @@ extension UIApplication {
     }
 }
 
+ // MARK:- UIWindow
 extension UIWindow {
     static var key: UIWindow? {
         if #available(iOS 13, *) {
@@ -607,6 +522,7 @@ extension UIWindow {
     }
 }
 
+ // MARK:- Attrubuted String
 extension NSMutableAttributedString {
     func setUnderLineForText(textForAttribute: String, withColor color: UIColor, withFontName fontName: String, fontSize:Int) {
         let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
@@ -631,6 +547,7 @@ extension NSMutableAttributedString {
      */
 }
 
+ // MARK:- CALayer
 extension CALayer {
     /*
      let caBasisAnimation = CABasicAnimation(keyPath: CALayer.CALayerAnimations_Kyes.rotation)
@@ -656,11 +573,10 @@ extension CALayer {
     }
 }
 
-
+// MARK:- UIDevice
 // #-#-#-#-#-#-#-#-#-#-#-#-#
 // MARK: UIDevice extensions
 // #-#-#-#-#-#-#-#-#-#-#-#-#
-
 public extension UIDevice {
     /*
      let deviceType = UIDevice().type
@@ -854,8 +770,8 @@ public extension UIDevice {
     }
 }
 
-
-// MARK:- Extension For CUSTOM Of VIEW
+ // MARK:- UIView
+//  Extension For CUSTOM Of VIEW
 extension UIView {
     @IBInspectable
     var cornerRadius: CGFloat {
@@ -942,8 +858,8 @@ extension UIView {
     }
 }
 
-
- // MARK:- Letter spacing for Label
+ // MARK:- Label
+ // Letter Spacing for Label
 extension UILabel {
     @IBInspectable
     var letterSpace: CGFloat {
@@ -972,15 +888,3 @@ extension UILabel {
 }
 
 
- // MARK:- Set Corner-Radius to UIView
-extension UIView {
-    /*
-     theView.roundCorners(corners: [.topLeft, .topRight], radius: 3.0)
-     */
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
-    }
-}
