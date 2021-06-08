@@ -12,9 +12,10 @@ import UIView_Shimmer
 
 
 /*
+ // Show
  cell.setTemplateWithSubviews(true, color: .lightGray, animate: true, viewBackgroundColor: .systemBackground)
 
- // stop
+ // Stop
  cell.setTemplateWithSubviews(false)
 
  */

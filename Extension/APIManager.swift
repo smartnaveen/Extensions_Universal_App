@@ -21,7 +21,7 @@ class APIManager: NSObject {
     func fetchData(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (Any) -> (), failure: @escaping(String)->()){
         let url = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(url)
-        //  let token = AppManager.getAuthenticationToken()
+//          let token = AppManager.getAuthenticationToken()
         let headers: HTTPHeaders = [
                   /* "Authorization": "your_access_token",  in case you need authorization header */
 //                  "Content-type": "multipart/form-data",

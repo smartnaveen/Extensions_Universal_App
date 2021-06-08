@@ -43,7 +43,7 @@ extension UIActivityIndicatorView {
 }
  // MARK:- This Code For used Extension Of UIActivitiyIndicatorView
 /*
- let wait = UIActivityIndicatorView(activityIndicatorStyle: .large, color: .green, placeInTheCenterOf: view)
+ let wait = UIActivityIndicatorView(activityIndicatorStyle: .large, color: .lightGray, placeInTheCenterOf: view)
      wait.startAnimating()
  
  */
