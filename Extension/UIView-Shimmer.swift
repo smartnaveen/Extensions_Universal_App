@@ -17,6 +17,8 @@ import UIView_Shimmer
 
  // Stop
  cell.setTemplateWithSubviews(false)
+ 
+ // Take bool value and check according to it.
 
  */
 

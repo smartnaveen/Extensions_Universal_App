@@ -758,7 +758,7 @@ private extension UIView {
     
 }
 
-//================ How Can I Used Toast-Swift Pod File Manually ========
+// MARK: - How Can I Used Toast-Swift Pod File Manually
 
 /*
  1. Search Toast-Swift on Google.
