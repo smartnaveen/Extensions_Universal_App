@@ -95,3 +95,106 @@ extension Date {
  let time = now.timeAgoDisplay()
  print(time)
  */
+
+
+// Most Useful converter to string to date
+func convertDateFormat(inputDate: String) -> String {
+    let olDateFormatter = DateFormatter()
+    olDateFormatter.locale = Locale(identifier: "en_US_POSIX")
+    olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    let oldDate = olDateFormatter.date(from: inputDate)
+    let convertDateFormatter = DateFormatter()
+    convertDateFormatter.dateFormat = "MMM dd yyyy h:mm a"
+    return convertDateFormatter.string(from: oldDate!)
+}
+let dateString = "2021-06-07T18:23:05.000Z"
+let t = convertDateFormat(inputDate: dateString)
+//print(t)
+
+
+
+
+
+
+
+// MARK: - Current/selected Time lie between open-closed.
+
+/*
+ 
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+    let calendar = Calendar.current
+    let now = Date()
+
+    // MARK: - Selected Time
+    let selectedTime = calendar.date(
+        bySettingHour: 16,
+        minute: 30,
+        second: 0,
+        of: now)!
+    
+
+    // MARK: - Starting Time
+    let eight_today = calendar.date( // 30 min  add
+      bySettingHour: 6,
+      minute: 0,
+      second: 0,
+      of: now)!
+    
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm"
+    let thirtyMinLater = Calendar.current.date(byAdding: .minute, value: 30, to: eight_today)!
+    let timeCalcualted = formatter.string(from: thirtyMinLater)
+    print(timeCalcualted)
+
+    
+    let hour = calendar.component(.hour, from: thirtyMinLater)
+    let min = calendar.component(.minute, from: thirtyMinLater)
+    print(hour,min)
+    
+    let finalTimeLater30min = calendar.date(
+        bySettingHour: hour,
+        minute: min,
+        second: 0,
+        of: thirtyMinLater)!
+    
+
+    // MARK: - Closed timing
+    let four_thirty_today = calendar.date( // 45 min subtract
+      bySettingHour: 17,
+      minute: 30,
+      second: 0,
+      of: now)!
+    
+    let fourty45Before = Calendar.current.date(byAdding: .minute, value: -45, to: four_thirty_today)!
+    let timeCalcualteded = formatter.string(from: fourty45Before)
+    print(timeCalcualteded)
+
+    
+    let hour1 = calendar.component(.hour, from: fourty45Before)
+    let min1 = calendar.component(.minute, from: fourty45Before)
+    print(hour1,min1)
+
+    
+    let finalTimeBefore45min = calendar.date(
+        bySettingHour: hour1,
+        minute: min1,
+        second: 0,
+        of: fourty45Before)!
+    
+   
+
+    if selectedTime >= finalTimeLater30min &&
+        selectedTime <= finalTimeBefore45min {
+      print("The time is between 8:00 and 16:30")
+    }else {
+        print("Not exists")
+    }
+    
+}
+ 
+ */
+
+

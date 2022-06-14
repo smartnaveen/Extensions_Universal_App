@@ -24,26 +24,28 @@ pod 'DropDown', '~> 2.3.13'     #DropDown
 pod 'DateToolsSwift'            #Date
 pod 'OTPFieldView'              #OTP FiledView
 pod 'CalendarDateRangePickerViewController' #CalenderDateRangePicker
+pod 'Socket.IO-Client-Swift'     #Socket
+pod 'SideMenu'                   #Side Menu
+pod 'Localize-Swift', '~> 3.2'   #Localization
+
+pod 'Firebase/Auth'              #User Authtication
+pod 'Firebase/Firestore'         #Cloud Firestore
+pod 'Firebase/Database'          #Real-Time db
+pod 'Firebase/Storage'           #Storage
+pod 'Firebase/Crashlytics'       #Report Crash
+pod 'GoogleMaps', '5.1.0'        #Maps
+pod 'GooglePlaces', '5.1.0'      #Find places
+pod 'Firebase/Messaging'         #Push notification
+
+
+pod 'SwiftKeychainWrapper'
+pod 'Charts'
 pod 'FSCalendar'                #Calendar # issue
 pod 'lottie-ios'
-pod 'SideMenu'
-pod 'Starscream', '~> 4.0.0'
 
 
-
-
-#pod 'Localize-Swift', '~> 3.2'
 #language list inside app
-
 #pod 'Lightbox'
 #pod 'CarbonKit'
-
-
-#Firebase
-#pod 'Firebase/Analytics'
-#pod 'Firebase/Crashlytics'
-#pod 'Firebase/DynamicLinks'
-#pod 'GooglePlaces', '~> 3.9.0'
-#pod 'GoogleMaps', '~> 3.9.0'
 
 end

@@ -17,7 +17,8 @@ class Controller: UIViewController {
         let url = "https://busk2ztzsh.execute-api.us-east-1.amazonaws.com/api/customer/show-all-active-stylist"
         var parameter: [String: Any] = [String: Any]()
         parameter["page"]            = 1
-        parameter["stylist_level"]   = "advanced"
+        parameter["stylist_level"]   = "advanced
+        
         
         AppManager.shared.fetchData(urlString: url, dict: parameter, requestType: .post) { (result) in
             let json = JSON(result)

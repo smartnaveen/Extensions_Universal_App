@@ -35,3 +35,15 @@ import UIKit
 
 // MARK: - For More Help Docs
 //https://medium.com/lean-localization/ios-localization-tutorial-938231f9f881
+
+// MARK: - 3rd party
+/*
+ 
+ // App Delegate
+ let langStr = Locale.current.languageCode
+ print(langStr!)
+ Localize.setCurrentLanguage(langStr!)
+ 
+ lblLogout.text = "Logout".localized()
+ btn.setTitle("Hello world".localized(), for: .normal)
+ */

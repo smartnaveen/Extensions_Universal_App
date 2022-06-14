@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2OM-3H-Ke1"; */
+"2OM-3H-Ke1.normalTitle" = "ปุ่ม";
+
+/* Class = "UILabel"; text = "Hello MacBook Pro"; ObjectID = "IXw-oi-lXR"; */
+"IXw-oi-lXR.text" = "สวัสดี MacBook Pro";
+
+/* Class = "UIButton"; normalTitle = "Welcome"; ObjectID = "WQg-Fc-05l"; */
+"WQg-Fc-05l.normalTitle" = "ยินดีต้อนรับ";

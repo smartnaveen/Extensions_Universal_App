@@ -67,6 +67,16 @@ class NetworkReachability: NSObject {
 
 
 
+// MARK: - BY using Alamofire (Most Using)
+//import Alamofire
+/*
+ class func isConnectedToNetwork() -> Bool {
+      guard let reachability = Alamofire.NetworkReachabilityManager()?.isReachable else { return false }
+      return reachability ? true: false
+  }
+ */
+
+
  
     
     

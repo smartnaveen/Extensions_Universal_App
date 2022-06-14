@@ -7,13 +7,14 @@
 
 import UIKit
 import Starscream
+import SideMenu
 
 class HomeViewController: UIViewController {
     
     var socket: WebSocket!
     var isConnected = false
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         var request = URLRequest(url: URL(string: "https://damp-beach-81446.herokuapp.com/")!)
@@ -22,7 +23,7 @@ class HomeViewController: UIViewController {
         socket.delegate = self
         socket.connect()
         socket.write(string: "hello there!")
-
+        
     }
     
     

@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import Firebase
+import GoogleMaps
+import GooglePlaces
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         
+        GMSServices.provideAPIKey("AIzaSyATVFeWh9TdCsnbWD4qDb7n6l5QNu3hQEo")
+        GMSPlacesClient.provideAPIKey("AIzaSyDf4uyT5Tm9JGA6CCq-GBWquA84IbXCQeQ")
+
         NetworkReachability.shared.startMonitoring()
         for family in UIFont.familyNames {
             for name in UIFont.fontNames(forFamilyName: family) {
