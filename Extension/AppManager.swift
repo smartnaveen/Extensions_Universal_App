@@ -14,7 +14,7 @@ import UserNotifications
 
 class AppManager: NSObject {
     
-    class var shared:AppManager{
+    class var shared: AppManager{
         struct  Singlton{
             static let instance = AppManager()
         }

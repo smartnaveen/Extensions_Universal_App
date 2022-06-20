@@ -11,8 +11,8 @@ import SwiftyJSON
 
 // MARK: - AppManager replaced with APIManager
 
-class AppManager: NSObject {
-    static let shared = AppManager()
+class AppManagerNew: NSObject {
+    static let shared = AppManagerNew()
     
     // MARK:- FetchData not generic means not model type
     func fetchData(urlString:String, dict: [String:Any],requestType: HTTPMethod, completion: @escaping (Any) -> (), failure: @escaping(String)->()){
