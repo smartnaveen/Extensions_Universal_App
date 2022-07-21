@@ -214,3 +214,28 @@ extension MapVC: UITextFieldDelegate{
     }
     
 }
+
+
+// MARK: - OPEN GOOGLE MAPS/ APPLE MAPS TO DRAW ROUTES
+ func showRouteOnMap(pickupCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(pickupCoordinate.latitude),\(pickupCoordinate.longitude)&daddr=\(destinationCoordinate.latitude),\(destinationCoordinate.longitude)&directionsmode=driving&zoom=14&views=traffic")!)
+        }
+        else {
+            print("Can't use comgooglemaps://");
+        }
+    }
+
+/*
+        //find route
+        let loc1 = CLLocationCoordinate2D.init(latitude: self.currentLatitude, longitude: self.currentLongitude)
+        let loc2 = CLLocationCoordinate2D.init(latitude: Double(selectedHCenter.first?.latitude ?? "") ?? 0.0, longitude: Double(selectedHCenter.first?.longitude ?? "") ?? 0.0)
+       // self.showRouteOnMap(pickupCoordinate: loc1, destinationCoordinate: loc2)
+*/
+
+// MARK: - APPLE MAPS
+        let loc2 = CLLocationCoordinate2D.init(latitude: Double(selectedHCenter.first?.latitude ?? "") ?? 0.0, longitude: Double(selectedHCenter.first?.longitude ?? "") ?? 0.0)
+        let coordinate = loc2
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+
