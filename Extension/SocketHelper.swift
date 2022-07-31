@@ -27,8 +27,6 @@ class SocketHelper: NSObject {
             completion(true)
         }
       socket?.connect()
-       
-
     }
 
     func disconnectSocket() {
@@ -45,6 +43,7 @@ class SocketHelper: NSObject {
         return false
 
     }
+    
     
     
 

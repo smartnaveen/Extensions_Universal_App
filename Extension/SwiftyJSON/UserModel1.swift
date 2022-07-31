@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class UserModel: NSObject {
+class UserModel1: NSObject {
     var page             = Int()
     var perPage          = Int()
     var total            = Int()
