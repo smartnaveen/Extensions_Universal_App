@@ -11,6 +11,7 @@ import UIKit
 struct BasicInfo: Codable {
     var name: String = ""
     var age: Int = 0
+    
     var ethic: [String] = []
     var ethic1: [String] = []
 
