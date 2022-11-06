@@ -47,7 +47,7 @@ pod 'lottie-ios'
 
 
 #language list inside app
-#pod 'Lightbox'
+pod 'Lightbox'
 #pod 'CarbonKit'
 
 end
