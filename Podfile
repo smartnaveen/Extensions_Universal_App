@@ -17,6 +17,7 @@ pod 'NVActivityIndicatorView'   #Show Loader
 pod 'Toast-Swift', '~> 5.0.1'   #Show Toast
 pod 'SkeletonView'              #Shimmer Effect
 pod 'UIView-Shimmer', '~> 1.0'  #Shimmer Effect
+pod 'AMShimmer'                 #Shimmer Effect
 pod 'Stripe'                    #Payment(cards)
 pod 'SwiftyGif'                 #For Gifs
 pod 'CountryPickerView'         #CountryPicker View
@@ -36,6 +37,7 @@ pod 'Firebase/Crashlytics'       #Report Crash
 pod 'GoogleMaps', '5.1.0'        #Maps
 pod 'GooglePlaces', '5.1.0'      #Find places
 pod 'Firebase/Messaging'         #Push notification
+pod "Koyomi"                 #Koyomi is a simple calendar view framework for iOS, written in Swift
 
 
 pod 'SwiftKeychainWrapper'

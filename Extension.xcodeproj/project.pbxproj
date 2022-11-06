@@ -38,6 +38,7 @@
 		6BB476ED2896E9D5008F6173 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EB2896E9D5008F6173 /* Model.swift */; };
 		6BB476F02896EA22008F6173 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EF2896EA22008F6173 /* HomeVC.swift */; };
 		6BBB4D4B269458F400A18280 /* DateToolsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBB4D4A269458F400A18280 /* DateToolsSwift.swift */; };
+		6BC1B5E729177D2D0090001E /* CountryPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC1B5E629177D2D0090001E /* CountryPickerVC.swift */; };
 		6BD64CB22691DE250091EB32 /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BD64CB02691DE250091EB32 /* Poppins-Regular.otf */; };
 		6BD64CB32691DE250091EB32 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BD64CB12691DE250091EB32 /* Poppins-Medium.otf */; };
 		6BDB11B926BD793800AD32D5 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDB11B826BD793800AD32D5 /* SocketHelper.swift */; };
@@ -117,6 +118,7 @@
 		6BB476EB2896E9D5008F6173 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6BB476EF2896EA22008F6173 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		6BBB4D4A269458F400A18280 /* DateToolsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToolsSwift.swift; sourceTree = "<group>"; };
+		6BC1B5E629177D2D0090001E /* CountryPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerVC.swift; sourceTree = "<group>"; };
 		6BD64CB02691DE250091EB32 /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		6BD64CB12691DE250091EB32 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		6BDB11B826BD793800AD32D5 /* SocketHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				6B3F0C09272D8AC100B1C02F /* IQKeyboardManager.swift */,
 				6BEC999B272EB7C900BF642F /* TouchLock.swift */,
 				6B744A192773630D0067B90E /* SSL Invalid Certificate.swift */,
+				6BC1B5E629177D2D0090001E /* CountryPickerVC.swift */,
 				6B078A9A2695D34500F67F1E /* HTML */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
@@ -612,6 +615,7 @@
 				6B078A912695674900F67F1E /* Localizable.swift in Sources */,
 				6B4C7CE426B8FB9700275E7A /* FirstViewController.swift in Sources */,
 				6B078A9326958EAC00F67F1E /* OTPFieldView.swift in Sources */,
+				6BC1B5E729177D2D0090001E /* CountryPickerVC.swift in Sources */,
 				E74C47DA2650F82600B571B5 /* PullToRefresh.swift in Sources */,
 				E73E8C17266299D800699CDD /* Toast.swift in Sources */,
 				E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */,
