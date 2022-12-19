@@ -234,8 +234,8 @@ extension MapVC: UITextFieldDelegate{
 */
 
 // MARK: - APPLE MAPS
-        let loc2 = CLLocationCoordinate2D.init(latitude: Double(selectedHCenter.first?.latitude ?? "") ?? 0.0, longitude: Double(selectedHCenter.first?.longitude ?? "") ?? 0.0)
-        let coordinate = loc2
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+//        let loc2 = CLLocationCoordinate2D.init(latitude: Double(selectedHCenter.first?.latitude ?? "") ?? 0.0, longitude: Double(selectedHCenter.first?.longitude ?? "") ?? 0.0)
+//        let coordinate = loc2
+//        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+//        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
 
