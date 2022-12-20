@@ -61,7 +61,7 @@ class LoginScreenVC: UIViewController, GIDSignInDelegate  {
  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      FirebaseApp.configure()
      
-     GIDSignIn.sharedInstance().clientID = "52065039481-htd9bkb99j00r9hma5ntq8ndo6egangu.apps.googleusercontent.com"
+     GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
      GIDSignIn.sharedInstance().delegate = self
      return true
  }

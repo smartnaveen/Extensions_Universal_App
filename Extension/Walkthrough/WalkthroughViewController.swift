@@ -96,3 +96,17 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
  
 
 }
+
+// MARK: - How to use
+/*
+ override func viewDidAppear(_ animated: Bool) {
+     if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+         //get true
+         return
+     }
+     let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+     if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+         present(walkthroughViewController, animated: true, completion: nil)
+     }
+ }
+ */

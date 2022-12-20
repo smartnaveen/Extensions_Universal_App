@@ -1,0 +1,20 @@
+
+{
+    "BioData": {
+        {
+            "FirstName": "Naveen",
+            "LastName": "Kumar",
+            "Gender": "Male",
+            "age": "24",
+            "address": {
+                "Street": "Banur",
+                "City": "Mohali",
+                "State": "Punjab",
+                "PinCode": "140601"
+            },
+            "Phone": "7528069624"
+        }
+        
+    
+    }
+}
