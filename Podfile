@@ -30,6 +30,7 @@ pod 'SideMenu'                   #Side Menu
 pod 'Localize-Swift', '~> 3.2'   #Localization
 
 pod 'Firebase/Auth'              #User Authtication
+pod 'GoogleSignIn', '~> 5.0'     #Google Login
 pod 'Firebase/Firestore'         #Cloud Firestore
 pod 'Firebase/Database'          #Real-Time db
 pod 'Firebase/Storage'           #Storage

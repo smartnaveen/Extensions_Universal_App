@@ -339,12 +339,20 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - Alamofire (5.4.1)
+  - AMShimmer (1.0.6)
+  - AppAuth (1.5.0):
+    - AppAuth/Core (= 1.5.0)
+    - AppAuth/ExternalUserAgent (= 1.5.0)
+  - AppAuth/Core (1.5.0)
+  - AppAuth/ExternalUserAgent (1.5.0):
+    - AppAuth/Core
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - Cache (6.0.0)
   - CalendarDateRangePickerViewController (0.1.0)
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
@@ -438,6 +446,10 @@ PODS:
   - GoogleMaps/Maps (5.1.0):
     - GoogleMaps/Base
   - GooglePlaces (5.1.0)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleUtilities/AppDelegateSwizzler (7.5.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -479,9 +491,17 @@ PODS:
     - BoringSSL-GRPC (= 0.0.7)
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
+  - GTMAppAuth (1.3.0):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.0)
+  - Imaginary (5.0.0):
+    - Cache (~> 6.0.0)
   - IQKeyboardManagerSwift (6.5.6)
+  - Koyomi (1.2.7)
   - leveldb-library (1.22.1)
+  - Lightbox (2.5.0):
+    - Imaginary (~> 5.0.0)
   - Localize-Swift (3.2.0):
     - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
     - Localize-Swift/UIKit (= 3.2.0)
@@ -522,6 +542,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - AMShimmer
   - CalendarDateRangePickerViewController
   - Charts
   - Cosmos (~> 23.0)
@@ -537,7 +558,10 @@ DEPENDENCIES:
   - FSCalendar
   - GoogleMaps (= 5.1.0)
   - GooglePlaces (= 5.1.0)
+  - GoogleSignIn (~> 5.0)
   - IQKeyboardManagerSwift
+  - Koyomi
+  - Lightbox
   - Localize-Swift (~> 3.2)
   - lottie-ios
   - MBProgressHUD (~> 1.2.0)
@@ -561,7 +585,10 @@ SPEC REPOS:
   trunk:
     - abseil
     - Alamofire
+    - AMShimmer
+    - AppAuth
     - BoringSSL-GRPC
+    - Cache
     - CalendarDateRangePickerViewController
     - Charts
     - Cosmos
@@ -582,12 +609,17 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleMaps
     - GooglePlaces
+    - GoogleSignIn
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - GTMAppAuth
     - GTMSessionFetcher
+    - Imaginary
     - IQKeyboardManagerSwift
+    - Koyomi
     - leveldb-library
+    - Lightbox
     - Localize-Swift
     - lottie-ios
     - MBProgressHUD
@@ -613,7 +645,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AMShimmer: 681eeaaedf9fc4e390e95e9dd6fe59df947cfee0
+  AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   CalendarDateRangePickerViewController: 9e82a36a21ad7338f4e21a314469bfabe1f738fb
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
@@ -634,12 +669,17 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: c57cd5aa7e91d10fa5106c792de74f3bd6436260
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
+  GTMAppAuth: 4d8f864896f3646f0c33baf38a28362f4c601e15
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Koyomi: f03615b8d2bb5a5a4752c6404a9794ed7ef7b327
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  Lightbox: cc3d5124f024fa8197fd23f913160db1c61a1852
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -662,6 +702,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   UIView-Shimmer: ff0a32c73d67c7dbdea3d9e530538b10d18aea56
 
-PODFILE CHECKSUM: 5f1f53d0a8326350de4024e0e8cceb0bce178bca
+PODFILE CHECKSUM: 03e0dfbdfe57ac4d3dac614cc53207b14274ad61
 
 COCOAPODS: 1.11.2
