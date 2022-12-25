@@ -46,6 +46,7 @@
 		6B744A1A2773630D0067B90E /* SSL Invalid Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B744A192773630D0067B90E /* SSL Invalid Certificate.swift */; };
 		6B858FB32721D44400FE8A0E /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B858FB22721D44400FE8A0E /* PushNotification.swift */; };
 		6B8F372F26FCC33B00B69E53 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8F372E26FCC33B00B69E53 /* SideMenu.swift */; };
+		6B8FD2FB295874FF00864AC1 /* zvoidwidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FD2FA295874FF00864AC1 /* zvoidwidget.swift */; };
 		6BB476EC2896E9D5008F6173 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EA2896E9D5008F6173 /* BasicInfo.swift */; };
 		6BB476ED2896E9D5008F6173 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EB2896E9D5008F6173 /* Model.swift */; };
 		6BB476F02896EA22008F6173 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EF2896EA22008F6173 /* HomeVC.swift */; };
@@ -139,6 +140,7 @@
 		6B744A192773630D0067B90E /* SSL Invalid Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSL Invalid Certificate.swift"; sourceTree = "<group>"; };
 		6B858FB22721D44400FE8A0E /* PushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		6B8F372E26FCC33B00B69E53 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		6B8FD2FA295874FF00864AC1 /* zvoidwidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zvoidwidget.swift; sourceTree = "<group>"; };
 		6BB476EA2896E9D5008F6173 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		6BB476EB2896E9D5008F6173 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6BB476EF2896EA22008F6173 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -270,6 +272,14 @@
 			path = ParseJson;
 			sourceTree = "<group>";
 		};
+		6B8FD2F7295874B300864AC1 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				6B8FD2FA295874FF00864AC1 /* zvoidwidget.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		6BB476EE2896E9DC008F6173 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +352,7 @@
 				E774BFA9261F58520045907A /* appDsymsUpload */,
 				6B473128295224520094ED00 /* Walkthrough */,
 				6B10754B2956DC7E00646F7B /* AppIconChanged */,
+				6B8FD2F7295874B300864AC1 /* Widget */,
 				6B473134295226030094ED00 /* ParseJson */,
 				6B4CBD0E2860185D00D14681 /* UserModel.swift */,
 				6B4CBD102860191F00D14681 /* AppManager.swift */,
@@ -669,6 +680,7 @@
 				E73E8BBC26613A0D00699CDD /* ShareBuildToClient.swift in Sources */,
 				E7BF1E9A266B58E7004D2FDF /* AppManagerNew.swift in Sources */,
 				E72ABF76265A18B5008CE6A7 /* GFunction.swift in Sources */,
+				6B8FD2FB295874FF00864AC1 /* zvoidwidget.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
 				6B078A952695CECC00F67F1E /* WebViewController.swift in Sources */,
