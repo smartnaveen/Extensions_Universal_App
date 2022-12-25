@@ -47,6 +47,10 @@
 		6B858FB32721D44400FE8A0E /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B858FB22721D44400FE8A0E /* PushNotification.swift */; };
 		6B8F372F26FCC33B00B69E53 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8F372E26FCC33B00B69E53 /* SideMenu.swift */; };
 		6B8FD2FB295874FF00864AC1 /* zvoidwidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FD2FA295874FF00864AC1 /* zvoidwidget.swift */; };
+		6B8FD300295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.29 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FD2FC295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.29 PM.png */; };
+		6B8FD301295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.12 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FD2FD295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.12 PM.png */; };
+		6B8FD302295875DC00864AC1 /* Screenshot 2022-12-25 at 5.37.41 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FD2FE295875DC00864AC1 /* Screenshot 2022-12-25 at 5.37.41 PM.png */; };
+		6B8FD303295875DC00864AC1 /* Screenshot 2022-12-25 at 5.35.56 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FD2FF295875DC00864AC1 /* Screenshot 2022-12-25 at 5.35.56 PM.png */; };
 		6BB476EC2896E9D5008F6173 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EA2896E9D5008F6173 /* BasicInfo.swift */; };
 		6BB476ED2896E9D5008F6173 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EB2896E9D5008F6173 /* Model.swift */; };
 		6BB476F02896EA22008F6173 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB476EF2896EA22008F6173 /* HomeVC.swift */; };
@@ -141,6 +145,10 @@
 		6B858FB22721D44400FE8A0E /* PushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		6B8F372E26FCC33B00B69E53 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		6B8FD2FA295874FF00864AC1 /* zvoidwidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zvoidwidget.swift; sourceTree = "<group>"; };
+		6B8FD2FC295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.29 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-25 at 5.36.29 PM.png"; sourceTree = "<group>"; };
+		6B8FD2FD295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.12 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-25 at 5.36.12 PM.png"; sourceTree = "<group>"; };
+		6B8FD2FE295875DC00864AC1 /* Screenshot 2022-12-25 at 5.37.41 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-25 at 5.37.41 PM.png"; sourceTree = "<group>"; };
+		6B8FD2FF295875DC00864AC1 /* Screenshot 2022-12-25 at 5.35.56 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-25 at 5.35.56 PM.png"; sourceTree = "<group>"; };
 		6BB476EA2896E9D5008F6173 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		6BB476EB2896E9D5008F6173 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6BB476EF2896EA22008F6173 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -275,6 +283,10 @@
 		6B8FD2F7295874B300864AC1 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				6B8FD2FF295875DC00864AC1 /* Screenshot 2022-12-25 at 5.35.56 PM.png */,
+				6B8FD2FD295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.12 PM.png */,
+				6B8FD2FC295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.29 PM.png */,
+				6B8FD2FE295875DC00864AC1 /* Screenshot 2022-12-25 at 5.37.41 PM.png */,
 				6B8FD2FA295874FF00864AC1 /* zvoidwidget.swift */,
 			);
 			path = Widget;
@@ -570,16 +582,20 @@
 				6BD64CB32691DE250091EB32 /* Poppins-Medium.otf in Resources */,
 				6B078A992695D33D00F67F1E /* help.html in Resources */,
 				E759292E25FA6BE500363F6B /* LaunchScreen.storyboard in Resources */,
+				6B8FD302295875DC00864AC1 /* Screenshot 2022-12-25 at 5.37.41 PM.png in Resources */,
 				6B10754F2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png in Resources */,
 				6B47312D295224860094ED00 /* Onboarding.storyboard in Resources */,
 				6B47313A2952263C0094ED00 /* BioData.json in Resources */,
 				E759292B25FA6BE500363F6B /* Assets.xcassets in Resources */,
 				E774BFAE2620AFCA0045907A /* appDsysms.png in Resources */,
+				6B8FD300295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.29 PM.png in Resources */,
 				6B0A3A3A271FD21D00C5440B /* GoogleService-Info.plist in Resources */,
 				6B70FA5D269541C6006659A8 /* Localizable.strings in Resources */,
+				6B8FD301295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.12 PM.png in Resources */,
 				E774BFAB261F59C60045907A /* Colors.plist in Resources */,
 				6B4B74C32697F86C00EC6A84 /* Failed.json in Resources */,
 				6B10754E2956DCA100646F7B /* Screenshot 2022-12-24 at 12.35.20 PM.png in Resources */,
+				6B8FD303295875DC00864AC1 /* Screenshot 2022-12-25 at 5.35.56 PM.png in Resources */,
 				6BE8126D268F6D5200A9BCBF /* giphy.gif in Resources */,
 				6BD64CB22691DE250091EB32 /* Poppins-Regular.otf in Resources */,
 				E759292925FA6BE300363F6B /* Main.storyboard in Resources */,
