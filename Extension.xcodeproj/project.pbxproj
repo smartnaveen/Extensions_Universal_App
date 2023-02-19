@@ -63,6 +63,8 @@
 		6BE8126D268F6D5200A9BCBF /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6BE8126C268F6D5200A9BCBF /* giphy.gif */; };
 		6BEADA9F2950C91400488120 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEADA9E2950C91400488120 /* ColorPicker.swift */; };
 		6BEC999C272EB7C900BF642F /* TouchLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC999B272EB7C900BF642F /* TouchLock.swift */; };
+		6BF48A7C29A1E0A1002FB405 /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF48A7B29A1E0A1002FB405 /* FacebookLogin.swift */; };
+		6BF48A7E29A1E17F002FB405 /* Screenshot 2023-02-19 at 10.16.26 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF48A7D29A1E17F002FB405 /* Screenshot 2023-02-19 at 10.16.26 AM.png */; };
 		DC09C42C32B7030B69201634 /* Pods_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */; };
 		E72ABF74265A18B5008CE6A7 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF71265A18B5008CE6A7 /* APIConstant.swift */; };
 		E72ABF75265A18B5008CE6A7 /* GConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ABF72265A18B5008CE6A7 /* GConstant.swift */; };
@@ -162,6 +164,8 @@
 		6BE8126C268F6D5200A9BCBF /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		6BEADA9E2950C91400488120 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		6BEC999B272EB7C900BF642F /* TouchLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchLock.swift; sourceTree = "<group>"; };
+		6BF48A7B29A1E0A1002FB405 /* FacebookLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
+		6BF48A7D29A1E17F002FB405 /* Screenshot 2023-02-19 at 10.16.26 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2023-02-19 at 10.16.26 AM.png"; sourceTree = "<group>"; };
 		C8F1E5D1D91E4C4BAC842FD3 /* Pods_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72ABF71265A18B5008CE6A7 /* APIConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		E72ABF72265A18B5008CE6A7 /* GConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GConstant.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				6B4730E329520D6B0094ED00 /* GoogleSignup.swift */,
+				6BF48A8029A1E195002FB405 /* FacebookLogin */,
 			);
 			path = SocialMediaLogin;
 			sourceTree = "<group>";
@@ -319,6 +324,15 @@
 				6BE8126C268F6D5200A9BCBF /* giphy.gif */,
 			);
 			path = gifs;
+			sourceTree = "<group>";
+		};
+		6BF48A8029A1E195002FB405 /* FacebookLogin */ = {
+			isa = PBXGroup;
+			children = (
+				6BF48A7B29A1E0A1002FB405 /* FacebookLogin.swift */,
+				6BF48A7D29A1E17F002FB405 /* Screenshot 2023-02-19 at 10.16.26 AM.png */,
+			);
+			path = FacebookLogin;
 			sourceTree = "<group>";
 		};
 		85F1422508AA6B9AFA2C6BA0 /* Frameworks */ = {
@@ -595,6 +609,7 @@
 				6B0A3A3A271FD21D00C5440B /* GoogleService-Info.plist in Resources */,
 				6B70FA5D269541C6006659A8 /* Localizable.strings in Resources */,
 				6B8FD301295875DC00864AC1 /* Screenshot 2022-12-25 at 5.36.12 PM.png in Resources */,
+				6BF48A7E29A1E17F002FB405 /* Screenshot 2023-02-19 at 10.16.26 AM.png in Resources */,
 				E774BFAB261F59C60045907A /* Colors.plist in Resources */,
 				6B4B74C32697F86C00EC6A84 /* Failed.json in Resources */,
 				6B10754E2956DCA100646F7B /* Screenshot 2022-12-24 at 12.35.20 PM.png in Resources */,
@@ -700,6 +715,7 @@
 				E73E8BBC26613A0D00699CDD /* ShareBuildToClient.swift in Sources */,
 				E7BF1E9A266B58E7004D2FDF /* AppManagerNew.swift in Sources */,
 				E72ABF76265A18B5008CE6A7 /* GFunction.swift in Sources */,
+				6BF48A7C29A1E0A1002FB405 /* FacebookLogin.swift in Sources */,
 				6B8FD2FB295874FF00864AC1 /* zvoidwidget.swift in Sources */,
 				E7802B67260E280B00F7C44C /* APIManager.swift in Sources */,
 				E759292425FA6BE300363F6B /* SceneDelegate.swift in Sources */,
