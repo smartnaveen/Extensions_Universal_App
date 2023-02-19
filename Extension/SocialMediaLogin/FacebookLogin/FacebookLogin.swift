@@ -64,3 +64,45 @@ pod 'FBSDKLoginKit'
      }
  }
  */
+
+// MARK: - AppDelegate setup
+/*
+import FBSDKCoreKit
+
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     FirebaseApp.configure()
+     
+     GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+     GIDSignIn.sharedInstance().delegate = self
+ 
+     ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+
+     return true
+ }
+ 
+ func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+     ApplicationDelegate.shared.application( app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+     return GIDSignIn.sharedInstance().handle(url)
+ }
+ 
+ */
+
+// MARK: - SceneDelegate setup
+/*
+import FBSDKCoreKit
+
+ Just Declared function below function......
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+   guard let url = URLContexts.first?.url else {
+       return
+   }
+ 
+ ApplicationDelegate.shared.application(UIApplication.shared, open: url, sourceApplication: nil, annotation: [UIApplication.OpenURLOptionsKey.annotation])
+
+        if UserDefaults.standard.value(forKey: "SAVEUSERID") as? String ?? "" != "" {
+            self.loadHomeview()
+        } else {
+            self.loadLoginView()
+        }
+}
+*/
