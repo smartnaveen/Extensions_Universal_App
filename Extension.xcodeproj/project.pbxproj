@@ -294,14 +294,13 @@
 			path = ParseJson;
 			sourceTree = "<group>";
 		};
-		6B6D645929A9BC340080E9D6 /* SocialMedia Share */ = {
+		6B6D645E29A9BEEA0080E9D6 /* SocialMediaShare */ = {
 			isa = PBXGroup;
 			children = (
 				6B6D645A29A9BCB50080E9D6 /* ShareHelper.swift */,
 				6B6D645C29A9BCF10080E9D6 /* InstagramHelper.swift */,
 			);
-			name = "SocialMedia Share";
-			path = SocialMediaLogin;
+			path = SocialMediaShare;
 			sourceTree = "<group>";
 		};
 		6B8FD2F7295874B300864AC1 /* Widget */ = {
@@ -393,8 +392,8 @@
 				6B28C933271E6F78001F9607 /* FirebaseManager */,
 				6BD64CAF2691DDB70091EB32 /* Fonts */,
 				6BB476EE2896E9DC008F6173 /* JSON */,
-				6B6D645929A9BC340080E9D6 /* SocialMedia Share */,
 				6B4730E529520D6F0094ED00 /* SocialMediaLogin */,
+				6B6D645E29A9BEEA0080E9D6 /* SocialMediaShare */,
 				E774BFA9261F58520045907A /* appDsymsUpload */,
 				6B473128295224520094ED00 /* Walkthrough */,
 				6B10754B2956DC7E00646F7B /* AppIconChanged */,
