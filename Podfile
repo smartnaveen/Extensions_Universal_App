@@ -43,6 +43,9 @@ pod "Koyomi"                 #Koyomi is a simple calendar view framework for iOS
 pod 'GoogleSignIn', '~> 5.0'  #Google login
 pod 'FBSDKCoreKit', '5.8.0'   #facebook login
 pod 'FBSDKLoginKit', '5.8.0'  #facebook login
+pod 'FacebookCore'            #facebook core
+pod 'FacebookLogin'           #facebook login
+pod 'FacebookShare'           #facebook share
 
 pod 'SwiftKeychainWrapper'
 pod 'Charts'
