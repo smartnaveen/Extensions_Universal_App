@@ -28,6 +28,7 @@ struct GConstant {
     static let kOnlyNumberValidation = "0123456789"
     static let kUserNamelenght = 12
     static let GooglePlaceKey = "AIzaSyDf4uyT5Tm9JGA6CCq-GBWquA84IbXCQeQ"//"AIzaSyBsg3-UPWprhK-Ntyjxs9Xjorr8apB_OPE"
+    static let kAPIError = "Something went wrong"
     
     static var loggedInUser             = UserModel()
     static var signUpUser               = UserModel()

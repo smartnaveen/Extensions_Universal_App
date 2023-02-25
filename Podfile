@@ -28,7 +28,8 @@ pod 'CalendarDateRangePickerViewController' #CalenderDateRangePicker
 pod 'Socket.IO-Client-Swift'     #Socket
 pod 'SideMenu'                   #Side Menu
 pod 'Localize-Swift', '~> 3.2'   #Localization
-
+pod 'FirebaseMessaging'          #Push notification
+pod 'SwiftyStoreKit'             #Subscription
 pod 'Firebase/Auth'              #User Authtication
 pod 'GoogleSignIn', '~> 5.0'     #Google Login
 pod 'Firebase/Firestore'         #Cloud Firestore
@@ -46,6 +47,7 @@ pod 'FBSDKLoginKit', '5.8.0'  #facebook login
 pod 'FacebookCore'            #facebook core
 pod 'FacebookLogin'           #facebook login
 pod 'FacebookShare'           #facebook share
+pod 'Google-Mobile-Ads-SDK'   #admob ads
 
 pod 'SwiftKeychainWrapper'
 pod 'Charts'
