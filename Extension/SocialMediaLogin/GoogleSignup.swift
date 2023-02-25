@@ -10,7 +10,9 @@ import UIKit
 import GoogleSignIn
 import FirebaseCore
 
-class LoginScreenVC: UIViewController, GIDSignInDelegate  {
+
+/*
+class LoginScreenVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,36 +24,44 @@ class LoginScreenVC: UIViewController, GIDSignInDelegate  {
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.signIn()
     }
-    
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
+}
+*/
+ 
+/*
+// MARK:  Google Signin
+extension LoginScreenVC: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                print("The user has not signed in before or they have since signed out.")
-            } else {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue{
+                print("The User has not signed in before or they have since signed out.")
+                Utility.shared.displayAlert(title: Constants.AppMessages.kError, message: Constants.AppMessages.somethingWentWrong, control: "Ok")
+            }else {
                 print("\(error.localizedDescription)")
+//                Utility.shared.displayAlert(title: "", message: "You have canceled the sign-in flow.", control: "Ok")
             }
             return
         }
-        
         // Perform any operations on signed in user here.
-        /*
-         userIdG = user.userID                  // For client-side use only!
-         idTokenG = user.authentication.idToken // Safe to send to the server
-         fullNameG = user.profile.name
-         givenNameG = user.profile.givenName
-         familyNameG = user.profile.familyName
-         emailG = user.profile.email
-         print("user email is==>" , user.profile.email)
-         DispatchQueue.main.async {
-         self.socialLoginApi(type: "G")
-         
-         }
-         */
+        let socialId = user.userID ?? ""
+        let fullName = user.profile.name ?? ""
+        let email = user.profile.email ?? ""
+        
+        print("id -> \(socialId) fullName -> \(fullName) email -> \(email)")
+        // Hit api
+        self.authVm.signInWithServer(username: email, password: "", isSocial: true, socialId: socialId, socialType: "Google", fullName: fullName) { (msg, stylesCount) in
+            if stylesCount == 0{
+                let vc = StylesVC().getControllerInstance(identifier: .main)
+                vc.isSocialMediaLogin = true
+                UIApplication.topViewController()?.present(vc, animated: true, completion: nil)
+            }else {
+                self.pushToHomeScreen()
+            }
+        } fail: { (errMsg) in
+            Utility.shared.displayAlert(title: Constants.AppMessages.kError, message: errMsg, control: "Ok")
+        }
     }
 }
-
+*/
 
 // MARK: - AppDelegate & SceneDelegate setup
 /*
@@ -93,7 +103,6 @@ class LoginScreenVC: UIViewController, GIDSignInDelegate  {
      }
  }
  
- 
  // SceneDelegate Setup
    Just Declared function below function......
  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -107,6 +116,5 @@ class LoginScreenVC: UIViewController, GIDSignInDelegate  {
 //            self.loadLoginView()
 //        }
  }
- 
- */
+*/
 

@@ -18,49 +18,62 @@ pod 'FBSDKLoginKit'
 
 /*
  // MARK: - Facebook Login Button
- @IBAction func btnFbAct(_ sender: UIButton){
-     self.login_Type = "F"
+ @IBAction func btnFacebook(_ sender: Any) {
      let fbLoginManager : LoginManager = LoginManager()
-     fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) -> Void in
-         if (error == nil){
-             let fbloginresult : LoginManagerLoginResult = result!
-             // if user cancel the login
-             if (result?.isCancelled)!{
-                 return
-             }
-             if(fbloginresult.grantedPermissions.contains("email")){
-                 print("login done now getting user detail")
-                 self.getFBUserData()
-             }
-         } else {
-             print("getting error while login")
-         }
-     }
+     fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) -> Void in
+           if (error == nil){
+               let fbloginresult : LoginManagerLoginResult = result!
+               // if user cancel the login
+               if (result?.isCancelled)!{
+                   return
+               }
+               
+               if(fbloginresult.grantedPermissions.contains("email")){
+                   print("login done now getting user detail")
+                   self.getFBUserData()
+               }
+           } else {
+               print("getting error while login")
+           }
+       }
  }
  
  func getFBUserData(){
      if((AccessToken.current) != nil){
-         GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-             if (error == nil){
-                 //everything works print the user data
-                 print("result==>" , result)
-                 
-                 self.login_Type = "F"
-                 self.email = ((result as AnyObject).value(forKey: "email") ?? "") as! String
-                 self.SUserId = ((result as AnyObject).value(forKey: "id") ?? "") as! String
-                 
-                 
-                 let firstName = ((result as AnyObject).value(forKey: "first_name") ?? "") as! String
-                 let lastName = ((result as AnyObject).value(forKey: "last_name") ?? "") as! String
-                 
-                 self.fullName = firstName + " " + lastName
+         let requestMe = GraphRequest.init(graphPath: "me", parameters: ["fields" : "id,name,email,picture.type(large)"])
+         let connection = GraphRequestConnection()
+         connection.add(requestMe, completionHandler:{ (connectn, userresult, error) in
+             if error != nil {
+                 Utility.shared.displayAlert(title: Constants.AppMessages.kError, message: error.debugDescription, control: "Ok")
+                 NSLog(error.debugDescription)
+                 return
+             }
+
+             if let dictData: [String : Any] = userresult as? [String : Any] {
+                 let email = dictData["email"] as? String ?? ""
+                 let fullName = dictData["name"] as? String ?? ""
+                 let fbId = dictData["id"] as? String ?? ""
+               
+                 // Hit api
                  DispatchQueue.main.async {
-                     self.socialLoginApi()
+                     self.authVm.signInWithServer(username: email, password: "", isSocial: true, socialId: fbId, socialType: "Facebook", fullName: fullName) { (msg, stylesCount) in
+                         if stylesCount == 0{
+                             let vc = StylesVC().getControllerInstance(identifier: .main)
+                             vc.isSocialMediaLogin = true
+                             UIApplication.topViewController()?.present(vc, animated: true, completion: nil)
+                         }else {
+                             self.pushToHomeScreen()
+                         }
+                     } fail: { (errMsg) in
+                         Utility.shared.displayAlert(title: Constants.AppMessages.kError, message: errMsg, control: "Ok")
+                     }
                  }
              }
          })
-     } else {
-         print("access error")
+         connection.start()
+     }
+     else {
+         Utility.shared.displayAlert(title: Constants.AppMessages.kError, message: Constants.AppMessages.somethingWentWrong, control: "Ok")
      }
  }
  */

@@ -39,7 +39,10 @@ pod 'GoogleMaps', '5.1.0'        #Maps
 pod 'GooglePlaces', '5.1.0'      #Find places
 pod 'Firebase/Messaging'         #Push notification
 pod "Koyomi"                 #Koyomi is a simple calendar view framework for iOS, written in Swift
-
+ 
+pod 'GoogleSignIn', '~> 5.0'  #Google login
+pod 'FBSDKCoreKit', '5.8.0'   #facebook login
+pod 'FBSDKLoginKit', '5.8.0'  #facebook login
 
 pod 'SwiftKeychainWrapper'
 pod 'Charts'

@@ -42,6 +42,7 @@
 		6B4CBD0F2860185D00D14681 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4CBD0E2860185D00D14681 /* UserModel.swift */; };
 		6B4CBD112860191F00D14681 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4CBD102860191F00D14681 /* AppManager.swift */; };
 		6B6A794C26994D4D00B92DA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A794B26994D4D00B92DA6 /* HomeViewController.swift */; };
+		6B6D645829A9B8870080E9D6 /* AppleSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D645729A9B8870080E9D6 /* AppleSignup.swift */; };
 		6B6D76B8296F11F300C4E152 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D76B7296F11F300C4E152 /* MusicManager.swift */; };
 		6B70FA5D269541C6006659A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B70FA5F269541C6006659A8 /* Localizable.strings */; };
 		6B744A1A2773630D0067B90E /* SSL Invalid Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B744A192773630D0067B90E /* SSL Invalid Certificate.swift */; };
@@ -142,6 +143,7 @@
 		6B4CBD0E2860185D00D14681 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6B4CBD102860191F00D14681 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		6B6A794B26994D4D00B92DA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6B6D645729A9B8870080E9D6 /* AppleSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignup.swift; sourceTree = "<group>"; };
 		6B6D76B7296F11F300C4E152 /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		6B70FA5E269541C6006659A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B70FA6426954A66006659A8 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		6B4730E529520D6F0094ED00 /* SocialMediaLogin */ = {
 			isa = PBXGroup;
 			children = (
+				6B6D645729A9B8870080E9D6 /* AppleSignup.swift */,
 				6B4730E329520D6B0094ED00 /* GoogleSignup.swift */,
 				6BF48A8029A1E195002FB405 /* FacebookLogin */,
 			);
@@ -749,6 +752,7 @@
 				6BC1B5E729177D2D0090001E /* CountryPickerVC.swift in Sources */,
 				E74C47DA2650F82600B571B5 /* PullToRefresh.swift in Sources */,
 				E73E8C17266299D800699CDD /* Toast.swift in Sources */,
+				6B6D645829A9B8870080E9D6 /* AppleSignup.swift in Sources */,
 				E7802B38260A644100F7C44C /* NetworkReachability.swift in Sources */,
 				6B473130295224860094ED00 /* WalkthroughViewController.swift in Sources */,
 				E7F0C3CB266FC66E008681F6 /* Closure.swift in Sources */,
