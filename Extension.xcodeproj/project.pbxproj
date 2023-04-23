@@ -20,6 +20,7 @@
 		6B10754E2956DCA100646F7B /* Screenshot 2022-12-24 at 12.35.20 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B10754C2956DCA100646F7B /* Screenshot 2022-12-24 at 12.35.20 PM.png */; };
 		6B10754F2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B10754D2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png */; };
 		6B1075512956DCC700646F7B /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1075502956DCC700646F7B /* AppIcon.swift */; };
+		6B178E7F29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B178E7E29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png */; };
 		6B199D382954BE8A0044B1F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B199D372954BE8A0044B1F0 /* ImagePicker.swift */; };
 		6B1F8C9026B97226006367FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1F8C8F26B97226006367FA /* TableViewCell.swift */; };
 		6B28C937271E6FB9001F9607 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28C934271E6FB9001F9607 /* PostModel.swift */; };
@@ -125,6 +126,7 @@
 		6B10754C2956DCA100646F7B /* Screenshot 2022-12-24 at 12.35.20 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-24 at 12.35.20 PM.png"; sourceTree = "<group>"; };
 		6B10754D2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-24 at 12.34.54 PM.png"; sourceTree = "<group>"; };
 		6B1075502956DCC700646F7B /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		6B178E7E29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2023-04-23 at 9.29.04 PM.png"; sourceTree = "<group>"; };
 		6B199D372954BE8A0044B1F0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6B1F8C8F26B97226006367FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6B28C934271E6FB9001F9607 /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 		E7802B2B260A58E700F7C44C /* AppEssential */ = {
 			isa = PBXGroup;
 			children = (
+				6B178E7E29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png */,
 				E759292A25FA6BE500363F6B /* Assets.xcassets */,
 				E759292C25FA6BE500363F6B /* LaunchScreen.storyboard */,
 				6B0A3A39271FD21D00C5440B /* GoogleService-Info.plist */,
@@ -645,6 +648,7 @@
 				6B4B74C32697F86C00EC6A84 /* Failed.json in Resources */,
 				6B10754E2956DCA100646F7B /* Screenshot 2022-12-24 at 12.35.20 PM.png in Resources */,
 				6B8FD303295875DC00864AC1 /* Screenshot 2022-12-25 at 5.35.56 PM.png in Resources */,
+				6B178E7F29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png in Resources */,
 				6BE8126D268F6D5200A9BCBF /* giphy.gif in Resources */,
 				6BD64CB22691DE250091EB32 /* Poppins-Regular.otf in Resources */,
 				E759292925FA6BE300363F6B /* Main.storyboard in Resources */,
