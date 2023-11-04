@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		6B10754F2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B10754D2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png */; };
 		6B1075512956DCC700646F7B /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1075502956DCC700646F7B /* AppIcon.swift */; };
 		6B178E7F29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B178E7E29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png */; };
+		6B18FCCD2AF61420001CE88D /* AudioRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18FCCC2AF6141F001CE88D /* AudioRecording.swift */; };
 		6B199D382954BE8A0044B1F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B199D372954BE8A0044B1F0 /* ImagePicker.swift */; };
 		6B1F8C9026B97226006367FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1F8C8F26B97226006367FA /* TableViewCell.swift */; };
 		6B28C937271E6FB9001F9607 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28C934271E6FB9001F9607 /* PostModel.swift */; };
@@ -127,6 +128,7 @@
 		6B10754D2956DCA100646F7B /* Screenshot 2022-12-24 at 12.34.54 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-24 at 12.34.54 PM.png"; sourceTree = "<group>"; };
 		6B1075502956DCC700646F7B /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		6B178E7E29F591CA00E8AB97 /* Screenshot 2023-04-23 at 9.29.04 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2023-04-23 at 9.29.04 PM.png"; sourceTree = "<group>"; };
+		6B18FCCC2AF6141F001CE88D /* AudioRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecording.swift; sourceTree = "<group>"; };
 		6B199D372954BE8A0044B1F0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6B1F8C8F26B97226006367FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6B28C934271E6FB9001F9607 /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				6BC1B5E629177D2D0090001E /* CountryPickerVC.swift */,
 				6BEADA9E2950C91400488120 /* ColorPicker.swift */,
 				6B199D372954BE8A0044B1F0 /* ImagePicker.swift */,
+				6B18FCCC2AF6141F001CE88D /* AudioRecording.swift */,
 				6B6D646629A9F09B0080E9D6 /* IAPHelper.swift */,
 				6B6D76B7296F11F300C4E152 /* MusicManager.swift */,
 				6B078A9A2695D34500F67F1E /* HTML */,
@@ -779,6 +782,7 @@
 				6B8F372F26FCC33B00B69E53 /* SideMenu.swift in Sources */,
 				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
 				E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */,
+				6B18FCCD2AF61420001CE88D /* AudioRecording.swift in Sources */,
 				6B199D382954BE8A0044B1F0 /* ImagePicker.swift in Sources */,
 				6B6D645D29A9BCF10080E9D6 /* InstagramHelper.swift in Sources */,
 				6B28C937271E6FB9001F9607 /* PostModel.swift in Sources */,
