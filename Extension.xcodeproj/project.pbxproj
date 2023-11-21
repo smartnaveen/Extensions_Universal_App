@@ -43,6 +43,9 @@
 		6B4C7CE626B9291900275E7A /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C7CE526B9291900275E7A /* CountDownTimer.swift */; };
 		6B4CBD0F2860185D00D14681 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4CBD0E2860185D00D14681 /* UserModel.swift */; };
 		6B4CBD112860191F00D14681 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4CBD102860191F00D14681 /* AppManager.swift */; };
+		6B6123852B0D1DA500C2B600 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6123842B0D1DA500C2B600 /* CustomTabBar.swift */; };
+		6B6123882B0D1DDB00C2B600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6123872B0D1DDB00C2B600 /* AppDelegate.swift */; };
+		6B61238B2B0D1E6400C2B600 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61238A2B0D1E6400C2B600 /* SceneDelegate.swift */; };
 		6B6A794C26994D4D00B92DA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A794B26994D4D00B92DA6 /* HomeViewController.swift */; };
 		6B6D645829A9B8870080E9D6 /* AppleSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D645729A9B8870080E9D6 /* AppleSignup.swift */; };
 		6B6D645B29A9BCB50080E9D6 /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D645A29A9BCB50080E9D6 /* ShareHelper.swift */; };
@@ -150,6 +153,9 @@
 		6B4C7CE526B9291900275E7A /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 		6B4CBD0E2860185D00D14681 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6B4CBD102860191F00D14681 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		6B6123842B0D1DA500C2B600 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		6B6123872B0D1DDB00C2B600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B61238A2B0D1E6400C2B600 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6B6A794B26994D4D00B92DA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6B6D645729A9B8870080E9D6 /* AppleSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignup.swift; sourceTree = "<group>"; };
 		6B6D645A29A9BCB50080E9D6 /* ShareHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHelper.swift; sourceTree = "<group>"; };
@@ -300,6 +306,24 @@
 				6B4731352952263B0094ED00 /* ViewController.swift */,
 			);
 			path = ParseJson;
+			sourceTree = "<group>";
+		};
+		6B6123862B0D1DAA00C2B600 /* CustomTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				6B6123842B0D1DA500C2B600 /* CustomTabBar.swift */,
+				6B6123892B0D1E1D00C2B600 /* StylistApp */,
+			);
+			path = CustomTabbar;
+			sourceTree = "<group>";
+		};
+		6B6123892B0D1E1D00C2B600 /* StylistApp */ = {
+			isa = PBXGroup;
+			children = (
+				6B6123872B0D1DDB00C2B600 /* AppDelegate.swift */,
+				6B61238A2B0D1E6400C2B600 /* SceneDelegate.swift */,
+			);
+			path = StylistApp;
 			sourceTree = "<group>";
 		};
 		6B6D645E29A9BEEA0080E9D6 /* SocialMediaShare */ = {
@@ -458,6 +482,7 @@
 				6B18FCCC2AF6141F001CE88D /* AudioRecording.swift */,
 				6B6D646629A9F09B0080E9D6 /* IAPHelper.swift */,
 				6B6D76B7296F11F300C4E152 /* MusicManager.swift */,
+				6B6123862B0D1DAA00C2B600 /* CustomTabbar */,
 				6B078A9A2695D34500F67F1E /* HTML */,
 				E774BFAA261F59C60045907A /* Colors.plist */,
 				E7802B2C260A593300F7C44C /* ApiManagerOLD */,
@@ -726,6 +751,7 @@
 			files = (
 				6BEADA9F2950C91400488120 /* ColorPicker.swift in Sources */,
 				6B0A3A38271FCFC800C5440B /* LocationManager.swift in Sources */,
+				6B6123882B0D1DDB00C2B600 /* AppDelegate.swift in Sources */,
 				6B078A972695D1C400F67F1E /* WebKit.swift in Sources */,
 				6B47312E295224860094ED00 /* WalkthroughPageViewController.swift in Sources */,
 				E759292625FA6BE300363F6B /* ViewController.swift in Sources */,
@@ -739,6 +765,7 @@
 				6B6D76B8296F11F300C4E152 /* MusicManager.swift in Sources */,
 				6BB476ED2896E9D5008F6173 /* Model.swift in Sources */,
 				6B6A794C26994D4D00B92DA6 /* HomeViewController.swift in Sources */,
+				6B61238B2B0D1E6400C2B600 /* SceneDelegate.swift in Sources */,
 				6BDB11B926BD793800AD32D5 /* SocketHelper.swift in Sources */,
 				6B6D646429A9F0040080E9D6 /* GADRewarded.swift in Sources */,
 				E774BFB326217BE00045907A /* imgurK.swift in Sources */,
@@ -782,6 +809,7 @@
 				6B8F372F26FCC33B00B69E53 /* SideMenu.swift in Sources */,
 				E74B9BA22605018F00D68644 /* Global.swift in Sources */,
 				E738A53E262CC33000A76112 /* DesignableUITextField.swift in Sources */,
+				6B6123852B0D1DA500C2B600 /* CustomTabBar.swift in Sources */,
 				6B18FCCD2AF61420001CE88D /* AudioRecording.swift in Sources */,
 				6B199D382954BE8A0044B1F0 /* ImagePicker.swift in Sources */,
 				6B6D645D29A9BCF10080E9D6 /* InstagramHelper.swift in Sources */,
